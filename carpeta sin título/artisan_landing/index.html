@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmen | Marroquinería de Lujo y Diseño Atemporal</title>
+    <meta name="description"
+        content="Descubre Carmen, la marca de marroquinería que fusiona diseño minimalista con artesanía tradicional. Bolsos, carteras y accesorios de cuero premium.">
+    <meta name="keywords" content="marroquinería, cuero, bolsos, carteras, moda, lujo, minimalismo, carmen, diseño">
+    <meta name="author" content="Carmen">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carmen.com/">
+    <meta property="og:title" content="Carmen | Marroquinería de Lujo">
+    <meta property="og:description"
+        content="Piezas únicas hechas a mano con los mejores materiales. Eleva tu estilo con Carmen.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://carmen.com/">
+    <meta property="twitter:title" content="Carmen | Marroquinería de Lujo">
+    <meta property="twitter:description"
+        content="Piezas únicas hechas a mano con los mejores materiales. Eleva tu estilo con Carmen.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
+
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#cf7317', // Terracota/Orange
+                        background: '#FAF9F7', // Soft cream
+                        'beige-dark': '#EBE5D9',
+                        text: {
+                            dark: '#1a1a1a',
+                            medium: '#4a4a4a',
+                            light: '#8a8a8a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '3xl': '30px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FAF9F7;
+        }
+
+        /* Scroll Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        /* Navbar Scroll State */
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .nav-scrolled .nav-text {
+            color: #1a1a1a !important;
+        }
+
+        .nav-scrolled .nav-icon {
+            background-color: #f3f4f6 !important;
+            color: #1a1a1a !important;
+        }
+
+        .nav-scrolled .logo-box {
+            background-color: #cf7317 !important;
+            /* Primary */
+        }
+
+        /* Initial Nav State (Transparent) */
+        .nav-transparent .nav-text {
+            color: white !important;
+        }
+
+        .nav-transparent .nav-icon {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+        }
+
+        .nav-transparent .nav-icon:hover {
+            background-color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .nav-transparent .logo-box {
+            background-color: white !important;
+        }
+
+        /* Lenis Recommended CSS */
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        /* Premium Button Styles */
+        .btn-premium {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            /* text-xs */
+            font-weight: 700;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            border-radius: 9999px;
+            /* rounded-full */
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium-primary {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .btn-premium-primary:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-premium-accent {
+            background-color: #cf7317;
+            color: white;
+        }
+
+        .btn-premium-accent:hover {
+            background-color: #b06214;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(207, 115, 23, 0.3);
+        }
+    </style>
+    <!-- Lenis Library -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+</head>
+
+<body class="text-text-dark font-sans antialiased">
+
+    <!-- Navbar -->
+    <header id="navbar"
+        class="fixed top-0 left-0 w-full z-50 py-6 px-4 md:px-8 transition-all duration-300 nav-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-3 h-3 rounded-sm logo-box transition-colors"></div>
+                <span class="text-xl font-bold tracking-tighter text-black">Carmen</span>
+            </a>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#collection"
+                    class="text-sm font-medium nav-text hover:text-primary transition-colors">Bolsos</a>
+                <a href="#collection"
+                    class="text-sm font-medium nav-text hover:text-primary transition-colors">Carteras</a>
+                <a href="#collection"
+                    class="text-sm font-medium nav-text hover:text-primary transition-colors">Billeteras</a>
+                <a href="#about" class="text-sm font-medium nav-text hover:text-primary transition-colors">Nosotros</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-3">
+                <button id="search-btn"
+                    class="w-10 h-10 rounded-lg flex items-center justify-center nav-icon transition-colors">
+                    <span class="material-icons text-xl">search</span>
+                </button>
+                <button
+                    class="w-10 h-10 rounded-lg flex items-center justify-center nav-icon transition-colors relative">
+                    <span class="material-icons text-xl">shopping_bag</span>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden w-10 h-10 rounded-lg flex items-center justify-center nav-icon transition-colors">
+                    <span class="material-icons text-xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[60] transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 flex justify-between items-center border-b border-gray-100">
+            <span class="text-xl font-bold tracking-tight text-black">Carmen</span>
+            <button id="close-mobile-menu" class="w-10 h-10 flex items-center justify-center text-gray-800">
+                <span class="material-icons text-2xl">close</span>
+            </button>
+        </div>
+        <nav class="flex-1 flex flex-col items-center justify-center space-y-8 p-8">
+            <a href="#collection"
+                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Bolsos</a>
+            <a href="#collection"
+                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Carteras</a>
+            <a href="#collection"
+                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Billeteras</a>
+            <a href="#about"
+                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Nosotros</a>
+        </nav>
+        <div class="p-8 border-t border-gray-100 text-center">
+            <p class="text-sm text-gray-500 mb-4">Síguenos</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-primary"><span class="material-icons">facebook</span></a>
+                <a href="#" class="text-gray-400 hover:text-primary"><span
+                        class="material-icons">photo_camera</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-white z-[70] hidden opacity-0 transition-opacity duration-300 flex flex-col">
+        <div class="p-6 flex justify-end">
+            <button id="close-search"
+                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-primary transition-colors">
+                <span class="material-icons text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex-1 max-w-4xl mx-auto w-full px-6">
+            <div class="border-b-2 border-gray-100 mb-8">
+                <input type="text" id="search-input" placeholder="Buscar productos..."
+                    class="w-full text-3xl md:text-5xl font-bold text-gray-900 placeholder-gray-300 py-4 focus:outline-none bg-transparent">
+            </div>
+            <div id="search-results"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[60vh] pb-10">
+                <!-- Results will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section (Full Screen) -->
+    <section
+        class="relative h-screen w-full flex items-center justify-center mb-0 overflow-hidden shadow-2xl reveal-on-scroll">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Carmen Hero" class="absolute inset-0 w-full h-full object-cover">
+
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl mt-20">
+            <span
+                class="block text-sm md:text-base tracking-[0.3em] uppercase mb-4 opacity-90 reveal-on-scroll delay-100">Nueva
+                Colección 2024</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tighter reveal-on-scroll">
+                Carmen
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-lg mx-auto font-light reveal-on-scroll"
+                style="transition-delay: 100ms;">
+                Redefiniendo el lujo con simplicidad y carácter.
+            </p>
+            <a href="#collection" class="inline-block btn-premium btn-premium-accent reveal-on-scroll delay-300">
+                Ver Colección
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-white/80">
+            <span class="material-icons text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- Main Container for Content -->
+    <div class="max-w-7xl mx-auto px-4 relative">
+
+        <!-- Collection Grid -->
+        <section id="collection" class="py-16">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Nuestra Colección</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <a href="product.html?id=1" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
+                            alt="Bolso Tote Clásico"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso Tote Clásico</h3>
+                        <span class="text-sm text-gray-500 mb-2">$189.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 2 -->
+                <a href="product.html?id=2" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+                            alt="Cartera Crossbody"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Cartera Crossbody</h3>
+                        <span class="text-sm text-gray-500 mb-2">$145.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 3 -->
+                <a href="product.html?id=3" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+                            alt="Billetera Minimalista"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Billetera Minimalista</h3>
+                        <span class="text-sm text-gray-500 mb-2">$55.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 4 -->
+                <a href="product.html?id=4" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=876&q=80"
+                            alt="Bolso de Viaje"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso de Viaje</h3>
+                        <span class="text-sm text-gray-500 mb-2">$299.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 5 -->
+                <a href="product.html?id=5" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=871&q=80"
+                            alt="Bolso de Mano"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso de Mano</h3>
+                        <span class="text-sm text-gray-500 mb-2">$129.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 6 -->
+                <a href="product.html?id=6" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=763&q=80"
+                            alt="Bolso Satchel"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso Satchel</h3>
+                        <span class="text-sm text-gray-500 mb-2">$210.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 7 -->
+                <a href="product.html?id=7" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?ixlib=rb-4.0.3&auto=format&fit=crop&w=798&q=80"
+                            alt="Mochila de Cuero"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Mochila de Cuero</h3>
+                        <span class="text-sm text-gray-500 mb-2">$275.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+
+                <!-- Product Card 8 -->
+                <a href="product.html?id=8" class="group cursor-pointer block">
+                    <div
+                        class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-200 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
+                            alt="Bolso Clutch"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso Clutch</h3>
+                        <span class="text-sm text-gray-500 mb-2">$95.00</span>
+                        <span class="text-sm text-primary font-medium hover:underline">Ver Detalles</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="py-20 bg-white reveal-on-scroll">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
+                        alt="Artesano trabajando" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="md:pl-10">
+                    <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Nuestra
+                        Historia</span>
+                    <div class="max-w-xl">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">Sobre Carmen</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            En Carmen, creemos que el verdadero lujo reside en la simplicidad y la calidad.
+                            Cada una de nuestras piezas es confeccionada a mano por maestros artesanos, utilizando
+                            cuero de la más alta calidad y técnicas tradicionales.
+                        </p>
+                        <p class="text-gray-500 text-lg leading-relaxed mb-8">
+                            Utilizamos solo cueros de la más alta calidad, curtidos vegetalmente para respetar el medio
+                            ambiente y asegurar una pátina única que mejora con el tiempo.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-xl mb-1">100%</h4>
+                                <p class="text-sm text-gray-500">Hecho a Mano</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-xl mb-1">Premium</h4>
+                                <p class="text-sm text-gray-500">Materiales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-32 bg-white border-t border-gray-100 reveal-on-scroll">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">Lo que dicen nuestros
+                        clientes</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Historias de quienes ya disfrutan de la experiencia.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+                    <!-- Review 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="mb-6 text-primary opacity-80">
+                            <span class="material-icons text-3xl">format_quote</span>
+                        </div>
+                        <p class="text-xl md:text-2xl font-serif italic text-gray-800 mb-8 leading-relaxed">
+                            "La calidad del cuero es impresionante. Se nota el amor y la dedicación en cada costura."
+                        </p>
+                        <div class="mt-auto">
+                            <h4 class="font-bold text-sm tracking-widest uppercase text-gray-900 mb-1">María C.</h4>
+                            <p class="text-xs text-gray-400 font-medium">Madrid, España</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div
+                        class="flex flex-col items-center text-center group border-t md:border-t-0 md:border-l border-gray-100 pt-12 md:pt-0 md:pl-12">
+                        <div class="mb-6 text-primary opacity-80">
+                            <span class="material-icons text-3xl">format_quote</span>
+                        </div>
+                        <p class="text-xl md:text-2xl font-serif italic text-gray-800 mb-8 leading-relaxed">
+                            "Buscaba un bolso que fuera elegante pero funcional, y el Tote Clásico superó mis
+                            expectativas."
+                        </p>
+                        <div class="mt-auto">
+                            <h4 class="font-bold text-sm tracking-widest uppercase text-gray-900 mb-1">Laura R.</h4>
+                            <p class="text-xs text-gray-400 font-medium">Buenos Aires, Argentina</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div
+                        class="flex flex-col items-center text-center group border-t md:border-t-0 md:border-l border-gray-100 pt-12 md:pt-0 md:pl-12">
+                        <div class="mb-6 text-primary opacity-80">
+                            <span class="material-icons text-3xl">format_quote</span>
+                        </div>
+                        <p class="text-xl md:text-2xl font-serif italic text-gray-800 mb-8 leading-relaxed">
+                            "El envío fue rápido y el empaquetado es precioso. Es el regalo perfecto."
+                        </p>
+                        <div class="mt-auto">
+                            <h4 class="font-bold text-sm tracking-widest uppercase text-gray-900 mb-1">Sofía P.</h4>
+                            <p class="text-xs text-gray-400 font-medium">Ciudad de México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-16 border-t border-gray-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <div class="w-3 h-3 bg-primary rounded-sm"></div>
+                        <span class="text-lg font-bold text-black">Carmen</span>
+                    </a>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Artesanía y diseño moderno en cada pieza.
+                    </p>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Comprar</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-primary transition-colors">Novedades</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Bolsos</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Accesorios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Ayuda</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Envíos</a></li>
+                        <li><a href="shipping-returns.html"
+                                class="hover:text-primary transition-colors">Devoluciones</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span
+                                class="material-icons text-xl">facebook</span></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span
+                                class="material-icons text-xl">photo_camera</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-200/60 text-center">
+                <p class="text-xs text-gray-400">&copy; 2024 Carmen. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar"
+        class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-xl font-bold text-gray-900">Tu Bolsa</h2>
+            <button id="close-cart" class="text-gray-400 hover:text-gray-900">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-6">
+            <!-- Items will be injected here -->
+            <p class="text-center text-gray-500 mt-10">Tu bolsa está vacía.</p>
+        </div>
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-gray-600 font-medium">Subtotal</span>
+                <span id="cart-total" class="text-xl font-bold text-gray-900">$0.00</span>
+            </div>
+            <button id="checkout-btn"
+                class="w-full btn-premium btn-premium-primary flex items-center justify-center gap-2">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300">
+    </div>
+
+
+
+    <!-- Scroll Animation Logic -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // Stagger animation for product cards
+        document.querySelectorAll('#collection .group').forEach((card, index) => {
+            card.classList.add('reveal-on-scroll');
+            // Add slight delay based on index (modulo 4 for rows)
+            const delay = (index % 4) * 100;
+            card.style.transitionDelay = `${delay}ms`;
+            observer.observe(card);
+        });
+
+        // --- Shopping Cart Logic ---
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const closeCartBtn = document.getElementById('close-cart');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalEl = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        // Note: We need to select the specific bag button. 
+        // In the header, it's the second button in the icons div.
+        // Let's add an ID to it in a separate edit or select it carefully.
+        // For now, let's select by icon content if possible or add ID.
+        // Adding ID 'open-cart' to the button in header is safer.
+        // But since I can't edit header in this chunk easily without context, I'll select by structure.
+        const openCartBtn = document.querySelector('header button:nth-child(2)');
+
+        let cart = JSON.parse(localStorage.getItem('artisan_cart')) || [];
+
+        function toggleCart() {
+            const isClosed = cartSidebar.classList.contains('translate-x-full');
+            if (isClosed) {
+                cartSidebar.classList.remove('translate-x-full');
+                cartOverlay.classList.remove('hidden');
+                setTimeout(() => cartOverlay.classList.remove('opacity-0'), 10);
+                renderCart();
+            } else {
+                cartSidebar.classList.add('translate-x-full');
+                cartOverlay.classList.add('opacity-0');
+                setTimeout(() => cartOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center text-gray-500 mt-10">Tu bolsa está vacía.</p>';
+                cartTotalEl.textContent = '$0.00';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const price = parseFloat(item.price.replace('$', '').replace(',', ''));
+                const quantity = item.quantity || 1;
+                total += price * quantity;
+
+                const itemEl = document.createElement('div');
+                itemEl.className = 'flex gap-4';
+                itemEl.innerHTML = `
+                    <div class="w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-gray-900 text-sm">
+                            ${item.name}
+                            ${quantity > 1 ? `<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full ml-1">x${quantity}</span>` : ''}
+                        </h4>
+                        <p class="text-primary font-bold text-sm mt-1">${item.price}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500 self-start">
+                        <span class="material-icons text-lg">delete</span>
+                    </button>
+                `;
+                cartItemsContainer.appendChild(itemEl);
+            });
+
+            cartTotalEl.textContent = `$${total.toFixed(2)}`;
+        }
+
+        window.removeFromCart = function (index) {
+            cart.splice(index, 1);
+            localStorage.setItem('artisan_cart', JSON.stringify(cart));
+            renderCart();
+        };
+
+        function checkout() {
+            if (cart.length === 0) return;
+
+            let message = "Hola, me gustaría realizar el siguiente pedido en Artisan:\n\n";
+            let total = 0;
+
+            cart.forEach(item => {
+                const quantity = item.quantity || 1;
+                message += `- ${item.name} ${quantity > 1 ? `(x${quantity})` : ''}: ${item.price}\n`;
+                total += parseFloat(item.price.replace('$', '').replace(',', '')) * quantity;
+            });
+
+            message += `\nTotal: $${total.toFixed(2)}`;
+
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        openCartBtn.addEventListener('click', toggleCart);
+        closeCartBtn.addEventListener('click', toggleCart);
+        cartOverlay.addEventListener('click', toggleCart);
+        checkoutBtn.addEventListener('click', checkout);
+
+        // --- Navbar Scroll Logic ---
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('nav-transparent', 'py-6');
+                navbar.classList.add('nav-scrolled', 'py-4');
+            } else {
+                navbar.classList.add('nav-transparent', 'py-6');
+                navbar.classList.remove('nav-scrolled', 'py-4');
+            }
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMobileMenu() {
+            const isClosed = mobileMenu.classList.contains('translate-x-full');
+            if (isClosed) {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden'; // Prevent scroll
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // --- Search Logic ---
+        const searchBtn = document.getElementById('search-btn');
+        const closeSearchBtn = document.getElementById('close-search');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        // Product Data (Duplicated for Index)
+        const products = [
+            { id: 1, name: "Bolso Tote Clásico", price: "$189.00", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80" },
+            { id: 2, name: "Cartera de Cuero", price: "$145.00", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" },
+            { id: 3, name: "Billetera Minimalista", price: "$55.00", image: "https://images.unsplash.com/photo-1627123424574-724758594e93?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" },
+            { id: 4, name: "Bolso de Viaje", price: "$299.00", image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=876&q=80" },
+            { id: 5, name: "Bolso de Mano", price: "$129.00", image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=871&q=80" },
+            { id: 6, name: "Cinturón Artesanal", price: "$45.00", image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80" },
+            { id: 7, name: "Mochila Urbana", price: "$210.00", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80" },
+            { id: 8, name: "Portafolio Ejecutivo", price: "$275.00", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80" } // Placeholder image
+        ];
+
+        function toggleSearch() {
+            const isHidden = searchOverlay.classList.contains('hidden');
+            if (isHidden) {
+                searchOverlay.classList.remove('hidden');
+                setTimeout(() => searchOverlay.classList.remove('opacity-0'), 10);
+                searchInput.focus();
+                document.body.style.overflow = 'hidden';
+            } else {
+                searchOverlay.classList.add('opacity-0');
+                setTimeout(() => searchOverlay.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+                searchInput.value = ''; // Clear input
+                searchResults.innerHTML = ''; // Clear results
+            }
+        }
+
+        function performSearch(query) {
+            searchResults.innerHTML = '';
+            if (!query) return;
+
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+
+            if (filtered.length === 0) {
+                searchResults.innerHTML = '<p class="text-gray-500 text-lg col-span-full text-center">No se encontraron productos.</p>';
+                return;
+            }
+
+            filtered.forEach(product => {
+                const el = document.createElement('div');
+                el.className = 'group cursor-pointer';
+                el.onclick = () => window.location.href = `product.html?id=${product.id}`;
+                el.innerHTML = `
+                    <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-gray-100">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">${product.name}</h3>
+                    <p class="text-primary font-bold">${product.price}</p>
+                `;
+                searchResults.appendChild(el);
+            });
+        }
+
+        searchBtn.addEventListener('click', toggleSearch);
+        closeSearchBtn.addEventListener('click', toggleSearch);
+        searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+
+        // --- Lenis Smooth Scroll Init ---
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+    </script>
+</body>
+
+</html>

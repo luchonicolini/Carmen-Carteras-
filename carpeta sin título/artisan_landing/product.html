@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartera de Cuero 'Elena' | Carmen</title>
+    <meta name="description"
+        content="Detalles de la Cartera 'Elena' de Carmen. Cuero legítimo, diseño minimalista y acabado premium. El complemento perfecto para tu estilo.">
+    <meta name="keywords" content="cartera elena, bolso cuero, carmen, moda mujer, accesorios lujo, marroquinería">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://carmen.com/product.html">
+    <meta property="og:title" content="Cartera de Cuero 'Elena' | Carmen">
+    <meta property="og:description" content="Elegancia y funcionalidad en una pieza única. Descubre la Cartera Elena.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cartera de Cuero 'Elena' | Carmen">
+    <meta property="twitter:description"
+        content="Elegancia y funcionalidad en una pieza única. Descubre la Cartera Elena.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
+
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#cf7317', // Terracota/Orange
+                        background: '#FAF9F7', // Soft cream
+                        'beige-dark': '#EBE5D9',
+                        text: {
+                            dark: '#1a1a1a',
+                            medium: '#4a4a4a',
+                            light: '#8a8a8a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF9F7;
+        }
+
+        /* Scroll Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Zoom Effect */
+        .zoom-container {
+            overflow: hidden;
+            position: relative;
+            cursor: crosshair;
+        }
+
+        .zoom-container img {
+            transition: transform 0.1s ease-out;
+            transform-origin: center center;
+        }
+
+        .zoom-container:hover img {
+            transform: scale(2);
+            /* Adjust zoom level */
+        }
+
+        /* Hide scrollbar for thumbnails if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Accordion animation */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary~* {
+            animation: sweep .3s ease-in-out;
+        }
+
+        @keyframes sweep {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        details[open] .chevron {
+            transform: rotate(180deg);
+        }
+
+        /* Lenis Recommended CSS */
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        /* Premium Button Styles */
+        .btn-premium {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            /* text-xs */
+            font-weight: 700;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            border-radius: 9999px;
+            /* rounded-full */
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium-primary {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .btn-premium-primary:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-premium-outline {
+            background-color: transparent;
+            border: 1px solid #e5e7eb;
+            color: #1a1a1a;
+        }
+
+        .btn-premium-outline:hover {
+            border-color: #1a1a1a;
+            background-color: #fff;
+        }
+
+        /* Embla Carousel Styles */
+        .embla {
+            overflow: hidden;
+        }
+
+        .embla__container {
+            display: flex;
+            gap: 2rem;
+            /* gap-8 equivalent */
+        }
+
+        .embla__slide {
+            flex: 0 0 70%;
+            /* Mobile width */
+            min-width: 0;
+        }
+
+        @media (min-width: 640px) {
+            .embla__slide {
+                flex: 0 0 45%;
+                /* Tablet width */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .embla__slide {
+                flex: 0 0 22%;
+                /* Desktop width */
+            }
+        }
+    </style>
+    <!-- Lenis Library -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- Embla Carousel -->
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+</head>
+
+<body class="text-text-dark font-sans antialiased">
+
+    <!-- Header (Simplified from Index) -->
+    <header class="w-full py-6 px-4 md:px-8 bg-[#FAF9F7]">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-3 h-3 bg-primary rounded-sm group-hover:bg-black transition-colors"></div>
+                <span class="text-xl font-bold tracking-tighter text-black">Carmen</span>
+            </a>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#collection"
+                    class="text-sm font-medium text-gray-900 hover:text-primary transition-colors">Bolsos</a>
+                <a href="index.html#collection"
+                    class="text-sm font-medium text-gray-900 hover:text-primary transition-colors">Carteras</a>
+                <a href="index.html#collection"
+                    class="text-sm font-medium text-gray-900 hover:text-primary transition-colors">Billeteras</a>
+                <a href="index.html#about"
+                    class="text-sm font-medium text-gray-900 hover:text-primary transition-colors">Nosotros</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-3">
+                <button id="search-btn"
+                    class="w-10 h-10 bg-[#EBE5D9] rounded-lg flex items-center justify-center text-gray-700 hover:bg-[#e0d6c2] transition-colors">
+                    <span class="material-icons text-xl">search</span>
+                </button>
+                <button
+                    class="w-10 h-10 bg-[#EBE5D9] rounded-lg flex items-center justify-center text-gray-700 hover:bg-[#e0d6c2] transition-colors relative">
+                    <span class="material-icons text-xl">shopping_bag</span>
+                </button>
+                <button
+                    class="md:hidden w-10 h-10 bg-[#EBE5D9] rounded-lg flex items-center justify-center text-gray-700 hover:bg-[#e0d6c2] transition-colors">
+                    <span class="material-icons text-xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-white z-[70] hidden opacity-0 transition-opacity duration-300 flex flex-col">
+        <div class="p-6 flex justify-end">
+            <button id="close-search"
+                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-primary transition-colors">
+                <span class="material-icons text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex-1 max-w-4xl mx-auto w-full px-6">
+            <div class="border-b-2 border-gray-100 mb-8">
+                <input type="text" id="search-input" placeholder="Buscar productos..."
+                    class="w-full text-3xl md:text-5xl font-bold text-gray-900 placeholder-gray-300 py-4 focus:outline-none bg-transparent">
+            </div>
+            <div id="search-results"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-y-auto max-h-[60vh] pb-10">
+                <!-- Results will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="max-w-7xl mx-auto px-6 py-10">
+
+        <!-- Breadcrumbs -->
+        <nav class="text-xs text-gray-500 mb-8">
+            <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-primary transition-colors">Carteras</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800 font-medium">Cartera de Cuero 'Elena'</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+            <!-- Left Column: Gallery -->
+            <div class="flex flex-col-reverse lg:flex-row gap-4">
+                <!-- Thumbnails -->
+                <div class="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-y-auto lg:w-24 no-scrollbar">
+                    <button
+                        class="flex-shrink-0 w-20 h-20 lg:w-full lg:h-24 rounded-lg overflow-hidden border-2 border-primary">
+                        <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+                            class="w-full h-full object-cover" alt="Thumbnail 1">
+                    </button>
+                    <button
+                        class="flex-shrink-0 w-20 h-20 lg:w-full lg:h-24 rounded-lg overflow-hidden border border-transparent opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=876&q=80"
+                            class="w-full h-full object-cover" alt="Thumbnail 2">
+                    </button>
+                    <button
+                        class="flex-shrink-0 w-20 h-20 lg:w-full lg:h-24 rounded-lg overflow-hidden border border-transparent opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=871&q=80"
+                            class="w-full h-full object-cover" alt="Thumbnail 3">
+                    </button>
+                    <button
+                        class="flex-shrink-0 w-20 h-20 lg:w-full lg:h-24 rounded-lg overflow-hidden border border-transparent opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                            class="w-full h-full object-cover" alt="Thumbnail 4">
+                    </button>
+                </div>
+
+                <!-- Main Image -->
+                <div
+                    class="flex-1 rounded-lg overflow-hidden bg-gray-100 aspect-[4/5] lg:aspect-auto zoom-container reveal-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+                        alt="Cartera de Cuero Elena" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Right Column: Product Info -->
+            <div class="flex flex-col reveal-on-scroll">
+                <h1 class="text-3xl md:text-4xl font-bold text-text-dark mb-4">Cartera de Cuero 'Elena'</h1>
+                <p class="text-3xl font-bold text-primary mb-6">$1,250.00</p>
+
+                <p class="text-text-medium leading-relaxed mb-8">
+                    La cartera Elena es la definición de elegancia funcional. Confeccionada a mano con cuero italiano de
+                    grano completo, cuenta con un diseño estructurado que mantiene su forma con el tiempo. Su interior
+                    espacioso y múltiples compartimentos la convierten en la compañera perfecta para el día a día.
+                </p>
+
+                <!-- Accordions -->
+                <div class="border-b border-gray-200 mb-4">
+                    <details class="group py-4 cursor-pointer" open>
+                        <summary class="flex justify-between items-center font-bold text-text-dark">
+                            Especificaciones
+                            <span
+                                class="material-icons text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                        </summary>
+                        <div class="mt-4 text-sm text-text-medium leading-relaxed">
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Material: 100% Cuero Italiano</li>
+                                <li>Dimensiones: 30cm x 25cm x 12cm</li>
+                                <li>Herrajes: Baño de oro 18k</li>
+                                <li>Forro: Algodón orgánico</li>
+                                <li>Hecho a mano en España</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="border-b border-gray-200 mb-10">
+                    <details class="group py-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-text-dark">
+                            Cuidado del Producto
+                            <span
+                                class="material-icons text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                        </summary>
+                        <div class="mt-4 text-sm text-text-medium leading-relaxed">
+                            <p>Para mantener su cartera en perfectas condiciones, recomendamos limpiarla con un paño
+                                suave y seco. Evite la exposición prolongada a la luz solar directa y la humedad.
+                                Utilice crema para cuero una vez al año para hidratar el material.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col gap-4 mb-6">
+                    <button id="add-to-cart-btn"
+                        class="w-full btn-premium btn-premium-primary flex items-center justify-center gap-2">
+                        <span class="material-icons text-lg">shopping_bag</span>
+                        Agregar a la Bolsa
+                    </button>
+                    <a href="https://wa.me/" target="_blank"
+                        class="relative w-full btn-premium btn-premium-outline flex items-center justify-center">
+                        <span class="material-icons text-lg absolute left-6">whatsapp</span>
+                        Consultar por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Share -->
+                <div class="flex justify-center gap-4">
+                    <button class="text-gray-400 hover:text-primary transition-colors"><span
+                            class="material-icons">share</span></button>
+                    <button class="text-gray-400 hover:text-primary transition-colors"><span
+                            class="material-icons">favorite_border</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <section class="mt-32 border-t border-gray-100 pt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-16 tracking-tight">Productos Relacionados</h2>
+
+            <!-- Embla Carousel -->
+            <div class="embla" id="related-products-carousel">
+                <div class="embla__container">
+                    <!-- Related 1 -->
+                    <div class="embla__slide group cursor-pointer" onclick="window.location.href='product.html?id=1'">
+                        <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80"
+                                alt="Bolso Tote"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso Tote Clásico</h3>
+                        <span class="text-sm font-bold text-primary">$189.00</span>
+                    </div>
+
+                    <!-- Related 2 -->
+                    <div class="embla__slide group cursor-pointer" onclick="window.location.href='product.html?id=3'">
+                        <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+                                alt="Billetera"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Billetera Minimalista</h3>
+                        <span class="text-sm font-bold text-primary">$55.00</span>
+                    </div>
+
+                    <!-- Related 3 -->
+                    <div class="embla__slide group cursor-pointer" onclick="window.location.href='product.html?id=4'">
+                        <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=876&q=80"
+                                alt="Bolso de Viaje"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso de Viaje</h3>
+                        <span class="text-sm font-bold text-primary">$299.00</span>
+                    </div>
+
+                    <!-- Related 4 -->
+                    <div class="embla__slide group cursor-pointer" onclick="window.location.href='product.html?id=5'">
+                        <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=871&q=80"
+                                alt="Bolso de Mano"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 mb-1">Bolso de Mano</h3>
+                        <span class="text-sm font-bold text-primary">$129.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar"
+        class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-xl font-bold text-gray-900">Tu Bolsa</h2>
+            <button id="close-cart" class="text-gray-400 hover:text-gray-900">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-6">
+            <!-- Items will be injected here -->
+            <p class="text-center text-gray-500 mt-10">Tu bolsa está vacía.</p>
+        </div>
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-gray-600 font-medium">Subtotal</span>
+                <span id="cart-total" class="text-xl font-bold text-gray-900">$0.00</span>
+            </div>
+            <button id="checkout-btn"
+                class="w-full btn-premium btn-premium-primary flex items-center justify-center gap-2">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300">
+    </div>
+
+    <!-- Footer (Simplified) -->
+    <footer class="py-16 border-t border-gray-200/60 mt-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="#" class="flex items-center gap-2 mb-4">
+                    <div class="w-3 h-3 bg-primary rounded-sm"></div>
+                    <span class="text-lg font-bold text-black">Carmen</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Artesanía y diseño moderno en cada pieza.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Comprar</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-primary transition-colors">Novedades</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Bolsos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Ayuda</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Envíos</a></li>
+                    <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Devoluciones</a>
+                    </li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span
+                            class="material-icons text-xl">facebook</span></a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span
+                            class="material-icons text-xl">photo_camera</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-200/60 text-center">
+            <p class="text-xs text-gray-400">&copy; 2024 Carmen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Dynamic Product Logic -->
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Bolso Tote Clásico",
+                price: "$189.00",
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80",
+                description: "El Bolso Tote Clásico es la combinación perfecta de estilo y funcionalidad. Con su amplio espacio interior y diseño atemporal, es ideal para el uso diario, ya sea para el trabajo o una salida casual.",
+                specs: [
+                    "Material: Cuero Genuino Premium",
+                    "Dimensiones: 40cm x 30cm x 15cm",
+                    "Cierre: Cremallera superior",
+                    "Bolsillos: 1 interior con cremallera, 2 abiertos"
+                ]
+            },
+            {
+                id: 2,
+                name: "Cartera Crossbody",
+                price: "$145.00",
+                image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+                description: "Nuestra Cartera Crossbody ofrece libertad de movimiento sin sacrificar el estilo. Compacta pero sorprendentemente espaciosa, mantiene tus esenciales organizados y seguros.",
+                specs: [
+                    "Material: Cuero Suave",
+                    "Correa: Ajustable y desmontable",
+                    "Dimensiones: 22cm x 16cm x 8cm",
+                    "Herrajes: Dorados"
+                ]
+            },
+            {
+                id: 3,
+                name: "Billetera Minimalista",
+                price: "$55.00",
+                image: "https://images.unsplash.com/photo-1627123424574-724758594e93?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+                description: "Diseñada para quienes valoran la simplicidad. Esta billetera delgada cabe perfectamente en cualquier bolsillo sin abultar, manteniendo tus tarjetas y efectivo accesibles.",
+                specs: [
+                    "Material: Cuero de Grano Completo",
+                    "Capacidad: 6 tarjetas + billetes",
+                    "Protección RFID: Sí",
+                    "Dimensiones: 11cm x 9cm"
+                ]
+            },
+            {
+                id: 4,
+                name: "Bolso de Viaje",
+                price: "$299.00",
+                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=876&q=80",
+                description: "Tu compañero perfecto para escapadas de fin de semana. Robusto, elegante y con capacidad suficiente para todo lo que necesitas. Viaja con clase.",
+                specs: [
+                    "Material: Cuero Resistente al Agua",
+                    "Dimensiones: 55cm x 35cm x 25cm",
+                    "Correa de hombro: Acolchada",
+                    "Compartimento para zapatos: Sí"
+                ]
+            },
+            {
+                id: 5,
+                name: "Bolso de Mano",
+                price: "$129.00",
+                image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=871&q=80",
+                description: "Un accesorio chic para tus eventos nocturnos o salidas especiales. Su diseño estructurado y acabado pulido añaden un toque de sofisticación a cualquier atuendo.",
+                specs: [
+                    "Material: Cuero Charol",
+                    "Cierre: Magnético",
+                    "Cadena: Dorada desmontable",
+                    "Dimensiones: 25cm x 15cm x 5cm"
+                ]
+            },
+            {
+                id: 6,
+                name: "Bolso Satchel",
+                price: "$210.00",
+                image: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=763&q=80",
+                description: "Inspirado en los clásicos bolsos escolares pero con un giro moderno y lujoso. Perfecto para la oficina o la universidad, con espacio para tablets y documentos.",
+                specs: [
+                    "Material: Cuero Rígido",
+                    "Compartimento Laptop: Hasta 13 pulgadas",
+                    "Asa: Superior reforzada",
+                    "Dimensiones: 32cm x 25cm x 10cm"
+                ]
+            },
+            {
+                id: 7,
+                name: "Mochila de Cuero",
+                price: "$275.00",
+                image: "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?ixlib=rb-4.0.3&auto=format&fit=crop&w=798&q=80",
+                description: "La funcionalidad se encuentra con el lujo. Esta mochila eleva tu estilo urbano mientras ofrece la comodidad y durabilidad que necesitas para el día a día.",
+                specs: [
+                    "Material: Cuero Envejecido",
+                    "Bolsillos exteriores: 2 con cremallera",
+                    "Espalda: Acolchada y transpirable",
+                    "Dimensiones: 42cm x 30cm x 14cm"
+                ]
+            },
+            {
+                id: 8,
+                name: "Bolso Clutch",
+                price: "$95.00",
+                image: "https://images.unsplash.com/photo-1559563458-527698bf5295?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80",
+                description: "Minimalismo en su máxima expresión. Este clutch es el detalle final perfecto para un look elegante y depurado. Llévalo bajo el brazo o en la mano.",
+                specs: [
+                    "Material: Cuero Napa Suave",
+                    "Interior: Forro de seda",
+                    "Bolsillo interno: Para tarjetas",
+                    "Dimensiones: 28cm x 18cm"
+                ]
+            }
+        ];
+
+        function loadProduct() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+
+            // Default to product 2 (Cartera Crossbody/Elena) if no ID or invalid
+            const product = products.find(p => p.id === productId) || products[1];
+
+            // Update DOM
+            document.title = `${product.name} | Artisan`;
+
+            // Breadcrumbs
+            const breadcrumbName = document.querySelector('nav.text-xs span.text-gray-800');
+            if (breadcrumbName) breadcrumbName.textContent = product.name;
+
+            // Main Image
+            const mainImage = document.querySelector('.flex-1 img');
+            if (mainImage) {
+                mainImage.src = product.image;
+                mainImage.alt = product.name;
+            }
+
+            // Thumbnails (For demo, we just reuse the main image for all thumbnails or keep static ones, 
+            // but let's update the first one to match)
+            const firstThumb = document.querySelector('.flex-shrink-0 img');
+            if (firstThumb) firstThumb.src = product.image;
+
+            // Info
+            const title = document.querySelector('h1');
+            if (title) title.textContent = product.name;
+
+            const price = document.querySelector('p.text-3xl');
+            if (price) price.textContent = product.price;
+
+            const description = document.querySelector('p.text-text-medium.leading-relaxed');
+            if (description) description.textContent = product.description;
+
+            // Specs List
+            const specsList = document.querySelector('ul.list-disc');
+            if (specsList && product.specs) {
+                specsList.innerHTML = product.specs.map(spec => `<li>${spec}</li>`).join('');
+            }
+
+            // Gallery Logic
+            const thumbnails = document.querySelectorAll('.flex-shrink-0');
+            const mainImg = document.querySelector('.flex-1 img');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function () {
+                    // Update main image
+                    const newSrc = this.querySelector('img').src;
+                    mainImg.src = newSrc;
+
+                    // Update active state
+                    thumbnails.forEach(t => {
+                        t.classList.remove('border-primary', 'opacity-100');
+                        t.classList.add('border-transparent', 'opacity-70');
+                    });
+                    this.classList.remove('border-transparent', 'opacity-70');
+                    this.classList.add('border-primary', 'opacity-100');
+                });
+            });
+
+            // Reveal content
+            const mainContent = document.getElementById('main-content');
+            // Removed opacity-0 logic as it causes perceived slowness
+            // if (mainContent) {
+            //     mainContent.classList.remove('opacity-0');
+            // }
+
+            // Init Scroll Animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+                observer.observe(element);
+            });
+
+            // Init Zoom
+            const zoomContainer = document.querySelector('.zoom-container');
+            const zoomImg = zoomContainer.querySelector('img');
+
+            if (zoomContainer && zoomImg) {
+                zoomContainer.addEventListener('mousemove', function (e) {
+                    const { left, top, width, height } = this.getBoundingClientRect();
+                    const x = e.clientX - left;
+                    const y = e.clientY - top;
+
+                    const xPercent = (x / width) * 100;
+                    const yPercent = (y / height) * 100;
+
+                    zoomImg.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+                });
+
+                // Reset on mouse leave (optional, CSS handles scale back)
+                zoomContainer.addEventListener('mouseleave', function () {
+                    zoomImg.style.transformOrigin = 'center center';
+                });
+            }
+
+            // --- Shopping Cart Logic (Shared) ---
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const closeCartBtn = document.getElementById('close-cart');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalEl = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const openCartBtn = document.querySelector('header button:nth-child(2)');
+            const addToCartBtn = document.getElementById('add-to-cart-btn');
+
+            let cart = JSON.parse(localStorage.getItem('artisan_cart')) || [];
+
+            function toggleCart() {
+                const isClosed = cartSidebar.classList.contains('translate-x-full');
+                if (isClosed) {
+                    cartSidebar.classList.remove('translate-x-full');
+                    cartOverlay.classList.remove('hidden');
+                    setTimeout(() => cartOverlay.classList.remove('opacity-0'), 10);
+                    renderCart();
+                } else {
+                    cartSidebar.classList.add('translate-x-full');
+                    cartOverlay.classList.add('opacity-0');
+                    setTimeout(() => cartOverlay.classList.add('hidden'), 300);
+                }
+            }
+
+            function renderCart() {
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="text-center text-gray-500 mt-10">Tu bolsa está vacía.</p>';
+                    cartTotalEl.textContent = '$0.00';
+                    return;
+                }
+
+                cart.forEach((item, index) => {
+                    const price = parseFloat(item.price.replace('$', '').replace(',', ''));
+                    const quantity = item.quantity || 1;
+                    total += price * quantity;
+
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'flex gap-4';
+                    itemEl.innerHTML = `
+                        <div class="w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-gray-900 text-sm">
+                                ${item.name}
+                                ${quantity > 1 ? `<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full ml-1">x${quantity}</span>` : ''}
+                            </h4>
+                            <p class="text-primary font-bold text-sm mt-1">${item.price}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500 self-start">
+                            <span class="material-icons text-lg">delete</span>
+                        </button>
+                    `;
+                    cartItemsContainer.appendChild(itemEl);
+                });
+
+                cartTotalEl.textContent = `$${total.toFixed(2)}`;
+            }
+
+            window.removeFromCart = function (index) {
+                cart.splice(index, 1);
+                localStorage.setItem('artisan_cart', JSON.stringify(cart));
+                renderCart();
+            };
+
+            function addToCart() {
+                const existingItemIndex = cart.findIndex(item => item.id === product.id);
+
+                if (existingItemIndex > -1) {
+                    cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1
+                    });
+                }
+
+                localStorage.setItem('artisan_cart', JSON.stringify(cart));
+                toggleCart(); // Open cart to show added item
+            }
+
+            function checkout() {
+                if (cart.length === 0) return;
+
+                let message = "Hola, me gustaría realizar el siguiente pedido en Artisan:\n\n";
+                let total = 0;
+
+                cart.forEach(item => {
+                    const quantity = item.quantity || 1;
+                    message += `- ${item.name} ${quantity > 1 ? `(x${quantity})` : ''}: ${item.price}\n`;
+                    total += parseFloat(item.price.replace('$', '').replace(',', '')) * quantity;
+                });
+
+                message += `\nTotal: $${total.toFixed(2)}`;
+
+                const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+
+            openCartBtn.addEventListener('click', toggleCart);
+            closeCartBtn.addEventListener('click', toggleCart);
+            cartOverlay.addEventListener('click', toggleCart);
+            checkoutBtn.addEventListener('click', checkout);
+            addToCartBtn.addEventListener('click', addToCart);
+
+            // --- Search Logic ---
+            const searchBtn = document.getElementById('search-btn');
+            const closeSearchBtn = document.getElementById('close-search');
+            const searchOverlay = document.getElementById('search-overlay');
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+
+            function toggleSearch() {
+                const isHidden = searchOverlay.classList.contains('hidden');
+                if (isHidden) {
+                    searchOverlay.classList.remove('hidden');
+                    setTimeout(() => searchOverlay.classList.remove('opacity-0'), 10);
+                    searchInput.focus();
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    searchOverlay.classList.add('opacity-0');
+                    setTimeout(() => searchOverlay.classList.add('hidden'), 300);
+                    document.body.style.overflow = '';
+                    searchInput.value = ''; // Clear input
+                    searchResults.innerHTML = ''; // Clear results
+                }
+            }
+
+            function performSearch(query) {
+                searchResults.innerHTML = '';
+                if (!query) return;
+
+                const filtered = products.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p class="text-gray-500 text-lg col-span-full text-center">No se encontraron productos.</p>';
+                    return;
+                }
+
+                filtered.forEach(product => {
+                    const el = document.createElement('div');
+                    el.className = 'group cursor-pointer';
+                    el.onclick = () => window.location.href = `product.html?id=${product.id}`;
+                    el.innerHTML = `
+                        <div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-gray-100">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">${product.name}</h3>
+                        <p class="text-primary font-bold">${product.price}</p>
+                    `;
+                    searchResults.appendChild(el);
+                });
+            }
+
+            searchBtn.addEventListener('click', toggleSearch);
+            closeSearchBtn.addEventListener('click', toggleSearch);
+            searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+        }
+
+        // Run on load
+        window.addEventListener('DOMContentLoaded', loadProduct);
+
+        // --- Lenis Smooth Scroll Init ---
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+        // --- Embla Carousel Init ---
+        const emblaNode = document.getElementById('related-products-carousel');
+        const options = { loop: false, align: 'start', containScroll: 'trimSnaps' };
+        const emblaApi = EmblaCarousel(emblaNode, options);
+
+    </script>
+
+</body>
+
+</html>
+```

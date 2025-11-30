@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envíos y Devoluciones | Carmen</title>
+    <meta name="description" content="Información sobre envíos, entregas y política de devoluciones de Carmen.">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
+
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#cf7317', // Terracota/Orange
+                        background: '#FAF9F7', // Soft cream
+                        'beige-dark': '#EBE5D9',
+                        text: {
+                            dark: '#1a1a1a',
+                            medium: '#4a4a4a',
+                            light: '#8a8a8a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF9F7;
+        }
+    </style>
+</head>
+
+<body class="text-text-dark font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navbar (Simplified) -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+                <div class="w-3 h-3 bg-primary rounded-sm"></div>
+                Carmen
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20 px-6">
+        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center tracking-tight">Envíos y
+                Devoluciones</h1>
+
+            <div class="space-y-12">
+                <!-- Shipping Section -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">local_shipping</span>
+                        Política de Envíos
+                    </h2>
+                    <div class="prose text-gray-600 leading-relaxed space-y-4">
+                        <p>
+                            Realizamos envíos a todo el país a través de nuestros socios logísticos de confianza.
+                            El tiempo de procesamiento de los pedidos es de <strong>1 a 2 días hábiles</strong>.
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Envío Estándar:</strong> 3 a 5 días hábiles. Gratis en compras superiores a
+                                $150.</li>
+                            <li><strong>Envío Express:</strong> 1 a 2 días hábiles. Costo adicional calculado al
+                                finalizar la compra.</li>
+                        </ul>
+                        <p>
+                            Una vez despachado tu pedido, recibirás un correo electrónico con el número de seguimiento
+                            para que puedas monitorear el estado de tu entrega en tiempo real.
+                        </p>
+                    </div>
+                </section>
+
+                <hr class="border-gray-100">
+
+                <!-- Returns Section -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">assignment_return</span>
+                        Cambios y Devoluciones
+                    </h2>
+                    <div class="prose text-gray-600 leading-relaxed space-y-4">
+                        <p>
+                            Queremos que ames tu compra. Si por alguna razón no estás completamente satisfecho,
+                            aceptamos devoluciones dentro de los <strong>30 días</strong> posteriores a la recepción del
+                            pedido.
+                        </p>
+                        <p>
+                            Para ser elegible para una devolución, el artículo debe estar:
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Sin usar y en las mismas condiciones en que lo recibiste.</li>
+                            <li>En su embalaje original.</li>
+                            <li>Con todas las etiquetas adjuntas.</li>
+                        </ul>
+                        <p class="text-sm bg-gray-50 p-4 rounded-lg mt-4 border border-gray-100">
+                            <strong>Nota:</strong> Los productos personalizados o en oferta final no son elegibles para
+                            devolución,
+                            salvo en caso de defecto de fabricación.
+                        </p>
+                    </div>
+                </section>
+
+                <hr class="border-gray-100">
+
+                <!-- Contact Section -->
+                <section>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">¿Necesitas ayuda?</h2>
+                    <p class="text-gray-600 mb-4">
+                        Si tienes alguna pregunta sobre tu pedido o necesitas iniciar un proceso de devolución,
+                        no dudes en contactarnos.
+                    </p>
+                    <a href="mailto:hola@carmen.com" class="text-primary font-bold hover:underline">hola@carmen.com</a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Simplified) -->
+    <footer class="py-12 border-t border-gray-200/60 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-400">
+                &copy; 2024 Carmen. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
