@@ -63,10 +63,10 @@
                 card.onclick = () => window.location.href = `product.html?id=${product.id}`;
                 card.innerHTML = `
                     <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-3 bg-gray-100">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md text-gray-700">${product.category}</span>
+                        <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='images/bag-isabel.svg';" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                        <span class="absolute top-2 left-2 bg-stone-900 text-white text-xs font-semibold tracking-wide px-2.5 py-1 rounded-md shadow-sm">${product.category}</span>
                     </div>
-                    <h3 class="text-base font-bold text-gray-900 group-hover:text-primary transition-colors leading-tight">${product.name}</h3>
+                    <h3 class="text-base font-serif font-bold text-gray-900 group-hover:text-primary transition-colors leading-tight">${product.name}</h3>
                     <p class="text-primary font-bold mt-1 text-sm">${product.price}</p>
                 `;
                 searchResults.appendChild(card);

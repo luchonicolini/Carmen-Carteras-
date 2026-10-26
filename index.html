@@ -1,277 +1,133 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carmen | Marroquinería de Lujo y Diseño Atemporal</title>
+    <title>Carmen | Atelier de Cuero y Marroquinería de Lujo · Buenos Aires</title>
     <meta name="description"
-        content="Descubre Carmen, la marca de marroquinería que fusiona diseño minimalista con artesanía tradicional. Bolsos, carteras y accesorios de cuero premium.">
-    <meta name="keywords" content="marroquinería, cuero, bolsos, carteras, moda, lujo, minimalismo, carmen, diseño">
-    <meta name="author" content="Carmen">
+        content="Carmen Atelier. Piezas atemporales en cuero vacuno curtido al vegetal, cortadas y cosidas a mano en Buenos Aires.">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://carmen.com/">
-    <meta property="og:title" content="Carmen | Marroquinería de Lujo">
+    <meta property="og:title" content="Carmen Atelier | Marroquinería de Lujo en Buenos Aires">
     <meta property="og:description"
-        content="Piezas únicas hechas a mano con los mejores materiales. Eleva tu estilo con Carmen.">
+        content="Piezas atemporales en cuero curtido vegetal, moldeadas a mano con oficio y calma.">
     <meta property="og:image"
-        content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://carmen.com/">
-    <meta property="twitter:title" content="Carmen | Marroquinería de Lujo">
-    <meta property="twitter:description"
-        content="Piezas únicas hechas a mano con los mejores materiales. Eleva tu estilo con Carmen.">
-    <meta property="twitter:image"
-        content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80">
+        content="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=80">
 
     <!-- Favicon -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
 
-    <!-- Google Fonts: Manrope -->
+    <!-- Google Fonts: Manrope & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#cf7317', // Terracota / Cuero cálido
-                        background: '#FAF9F7', // Soft cream
-                        'beige-dark': '#EBE5D9',
-                        text: {
-                            dark: '#1a1a1a',
-                            medium: '#4a4a4a',
-                            light: '#8a8a8a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        '3xl': '30px',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #FAF9F7;
-        }
-
-        /* Scroll Animation Classes */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-100 {
-            transition-delay: 0.1s;
-        }
-
-        .delay-200 {
-            transition-delay: 0.2s;
-        }
-
-        .delay-300 {
-            transition-delay: 0.3s;
-        }
-
-        /* Navbar Scroll State */
-        .nav-scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-        }
-
-        .nav-scrolled .nav-text {
-            color: #1a1a1a !important;
-        }
-
-        .nav-scrolled .nav-icon {
-            background-color: #f3f4f6 !important;
-            color: #1a1a1a !important;
-        }
-
-        .nav-scrolled .logo-box {
-            background-color: #cf7317 !important;
-        }
-
-        /* Initial Nav State (Transparent) */
-        .nav-transparent .nav-text {
-            color: white !important;
-        }
-
-        .nav-transparent .nav-icon {
-            background-color: rgba(255, 255, 255, 0.2) !important;
-            color: white !important;
-        }
-
-        .nav-transparent .nav-icon:hover {
-            background-color: rgba(255, 255, 255, 0.3) !important;
-        }
-
-        .nav-transparent .logo-box {
-            background-color: white !important;
-        }
-
-        /* Lenis Recommended CSS */
-        html.lenis,
-        html.lenis body {
-            height: auto;
-        }
-
-        .lenis.lenis-smooth {
-            scroll-behavior: auto !important;
-        }
-
-        /* Premium Button Styles */
-        .btn-premium {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-premium-primary {
-            background-color: #1a1a1a;
-            color: white;
-        }
-
-        .btn-premium-primary:hover {
-            background-color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-premium-accent {
-            background-color: #cf7317;
-            color: white;
-        }
-
-        .btn-premium-accent:hover {
-            background-color: #b06214;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(207, 115, 23, 0.3);
-        }
-    </style>
+    <!-- Estilos Compilados (Tailwind CSS + Custom) -->
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Lenis Library -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 </head>
 
-<body class="text-text-dark font-sans antialiased">
+<body class="bg-[#FAF9F7] text-stone-900 font-sans antialiased selection:bg-stone-200">
 
-    <!-- Navbar -->
-    <header id="navbar"
-        class="fixed top-0 left-0 w-full z-50 py-6 px-4 md:px-8 transition-all duration-300 nav-transparent">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="w-3 h-3 rounded-sm logo-box transition-colors"></div>
-                <span class="text-xl font-bold tracking-tighter text-black">Carmen</span>
-            </a>
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#161412] text-[#FAF9F7] text-xs py-2 px-4 text-center tracking-wide font-medium">
+        Envíos a todo el país · Grabado artesanal sin cargo
+    </div>
 
-            <!-- Navigation (Desktop) -->
-            <nav class="hidden md:flex space-x-8">
+    <!-- Main Navigation Bar -->
+    <header id="navbar" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/70 py-4 px-4 md:px-8 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Left Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-7">
                 <a href="#collection" data-filter="Bolsos"
-                    class="nav-category-link text-sm font-medium nav-text hover:text-primary transition-colors">Bolsos</a>
+                    class="nav-category-link nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">Bolsos</a>
                 <a href="#collection" data-filter="Carteras"
-                    class="nav-category-link text-sm font-medium nav-text hover:text-primary transition-colors">Carteras</a>
+                    class="nav-category-link nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">Carteras</a>
                 <a href="#collection" data-filter="Billeteras"
-                    class="nav-category-link text-sm font-medium nav-text hover:text-primary transition-colors">Billeteras</a>
-                <a href="#about" class="text-sm font-medium nav-text hover:text-primary transition-colors">Nosotros</a>
+                    class="nav-category-link nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">Billeteras</a>
+                <a href="#about"
+                    class="nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">El atelier</a>
             </nav>
 
-            <!-- Icons -->
-            <div class="flex items-center space-x-3">
+            <!-- Center Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-6 h-6 rounded-full border border-stone-800 flex items-center justify-center transition-transform group-hover:scale-105">
+                    <span class="font-serif italic text-xs font-semibold text-stone-900">C</span>
+                </div>
+                <span class="font-serif text-2xl font-normal tracking-tight text-stone-900">Carmen</span>
+            </a>
+
+            <!-- Right Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-7">
                 <button id="search-btn"
-                    class="w-10 h-10 rounded-lg flex items-center justify-center nav-icon transition-colors"
-                    title="Buscar productos">
-                    <span class="material-icons text-xl">search</span>
+                    class="nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors cursor-pointer">
+                    Buscar
+                </button>
+                <button id="open-fav-btn"
+                    class="open-fav-btn nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors fav-text-count cursor-pointer">
+                    Favoritos
                 </button>
                 <button id="open-cart-btn"
-                    class="open-cart-btn w-10 h-10 rounded-lg flex items-center justify-center nav-icon transition-colors relative"
-                    title="Ver tu bolsa de compras">
-                    <span class="material-icons text-xl">shopping_bag</span>
-                    <span class="cart-badge hidden absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full items-center justify-center">0</span>
+                    class="open-cart-btn nav-link-draw text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors bolsa-text-count cursor-pointer">
+                    Bolsa (0)
                 </button>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden w-10 h-10 rounded-lg flex items-center justify-center nav-icon transition-colors"
-                    title="Abrir menú">
-                    <span class="material-icons text-xl">menu</span>
+            </div>
+
+            <!-- Mobile Controls -->
+            <div class="flex md:hidden items-center space-x-3">
+                <button id="search-btn-mobile" class="w-9 h-9 flex items-center justify-center text-stone-800" title="Buscar">
+                    <span class="material-icons text-xl">search</span>
+                </button>
+                <button class="open-cart-btn w-9 h-9 flex items-center justify-center text-stone-800 relative" title="Bolsa">
+                    <span class="material-icons text-xl">shopping_bag</span>
+                    <span class="cart-badge hidden absolute -top-1 -right-1 bg-primary text-white text-xs font-bold w-4 h-4 rounded-full items-center justify-center">0</span>
+                </button>
+                <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center text-stone-800" title="Menú">
+                    <span class="material-icons text-2xl">menu</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu Drawer -->
     <div id="mobile-menu"
         class="fixed inset-0 bg-white z-[60] transform translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="p-6 flex justify-between items-center border-b border-gray-100">
-            <span class="text-xl font-bold tracking-tight text-black">Carmen</span>
-            <button id="close-mobile-menu" class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-primary transition-colors">
+        <div class="p-6 flex justify-between items-center border-b border-stone-200">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full border border-stone-800 flex items-center justify-center">
+                    <span class="font-serif italic text-xs font-semibold text-stone-900">C</span>
+                </div>
+                <span class="font-serif text-xl tracking-tight text-stone-900">Carmen</span>
+            </div>
+            <button id="close-mobile-menu" class="w-10 h-10 flex items-center justify-center text-stone-800 hover:text-primary transition-colors">
                 <span class="material-icons text-2xl">close</span>
             </button>
         </div>
-        <nav class="flex-1 flex flex-col items-center justify-center space-y-8 p-8">
+        <nav class="flex-1 flex flex-col items-center justify-center space-y-6 p-8">
             <a href="#collection" data-filter="Bolsos"
-                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Bolsos</a>
+                class="mobile-link text-3xl font-serif text-stone-900 hover:text-primary transition-colors">Bolsos</a>
             <a href="#collection" data-filter="Carteras"
-                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Carteras</a>
+                class="mobile-link text-3xl font-serif text-stone-900 hover:text-primary transition-colors">Carteras</a>
             <a href="#collection" data-filter="Billeteras"
-                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Billeteras</a>
+                class="mobile-link text-3xl font-serif text-stone-900 hover:text-primary transition-colors">Billeteras</a>
             <a href="#about"
-                class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Nosotros</a>
+                class="mobile-link text-3xl font-serif text-stone-900 hover:text-primary transition-colors">El atelier</a>
+            <button onclick="document.getElementById('close-mobile-menu').click(); window.CarmenFavorites.toggleFavoritesDrawer(true);"
+                class="text-base text-stone-700 hover:text-primary transition-colors flex items-center gap-2 pt-4">
+                <span class="material-icons text-red-500 text-sm">favorite</span>
+                Mis Favoritos (<span class="fav-badge inline">0</span>)
+            </button>
             <a href="shipping-returns.html"
-                class="mobile-link text-xl text-gray-500 hover:text-primary transition-colors mt-4">Envíos y Devoluciones</a>
+                class="mobile-link text-xs uppercase tracking-wider text-stone-500 hover:text-primary transition-colors">Envíos y Devoluciones</a>
         </nav>
-        <div class="p-8 border-t border-gray-100 text-center">
-            <p class="text-sm text-gray-500 mb-4">Síguenos</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-            </div>
-        </div>
     </div>
 
     <!-- Search Overlay -->
@@ -279,238 +135,270 @@
         class="fixed inset-0 bg-white z-[70] hidden opacity-0 transition-opacity duration-300 flex flex-col">
         <div class="p-6 flex justify-end">
             <button id="close-search"
-                class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-primary transition-colors"
+                class="w-10 h-10 flex items-center justify-center text-stone-800 hover:text-primary transition-colors"
                 title="Cerrar búsqueda">
                 <span class="material-icons text-3xl">close</span>
             </button>
         </div>
         <div class="flex-1 max-w-4xl mx-auto w-full px-6">
-            <div class="border-b-2 border-gray-100 mb-8">
-                <input type="text" id="search-input" placeholder="Buscar productos (ej. tote, crossbody)..."
-                    class="w-full text-2xl md:text-4xl font-bold text-gray-900 placeholder-gray-300 py-4 focus:outline-none bg-transparent">
+            <div class="border-b-2 border-stone-200 mb-8">
+                <input type="text" id="search-input" placeholder="Buscar piezas (ej. Isabel, Alba, Lola)..."
+                    class="w-full text-2xl md:text-4xl font-serif text-stone-900 placeholder-stone-400 py-4 focus:outline-none bg-transparent">
             </div>
             <div id="search-results"
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto max-h-[60vh] pb-10">
-                <!-- Inyectado por search.js -->
+                <!-- Inyectado dinámicamente por search.js -->
             </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section
-        class="relative h-screen w-full flex items-center justify-center mb-0 overflow-hidden shadow-2xl reveal-on-scroll">
-        <div class="absolute inset-0 bg-black/35 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Carmen Colección Hero" class="absolute inset-0 w-full h-full object-cover">
+    <!-- Hero Card Banner -->
+    <div class="max-w-7xl mx-auto px-4 md:px-8 mt-5 md:mt-8">
+        <section id="hero-section" class="rounded-3xl bg-[#9C4C13] text-white p-8 md:p-14 lg:p-16 overflow-hidden relative shadow-sm transition-transform duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Left Column (Copy & CTA) -->
+                <div class="lg:col-span-7 flex flex-col items-start justify-center pr-0 lg:pr-6 z-10">
+                    <span class="text-xs md:text-sm text-[#F7EDE1]/90 tracking-wide mb-5 font-normal">
+                        Colección otoño, hecha en pequeños lotes
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal leading-[1.08] tracking-tight text-white mb-6">
+                        Un cuero que se<br>vuelve tuyo con<br>los años.
+                    </h1>
+                    <p class="text-sm md:text-base text-[#F7EDE1]/90 max-w-lg mb-8 font-light leading-relaxed">
+                        Piel curtida al vegetal, cortada y cosida a mano en Buenos Aires.
+                    </p>
+                    <a href="#collection"
+                        class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-stone-900 text-xs md:text-sm font-semibold tracking-wide hover:bg-stone-100 transition-all shadow-xs hover:scale-105 active:scale-95">
+                        Explorar colección
+                    </a>
+                </div>
 
-        <div class="relative z-20 text-center text-white px-4 max-w-3xl mt-16">
-            <span
-                class="block text-xs md:text-sm tracking-[0.35em] uppercase mb-4 opacity-90 reveal-on-scroll delay-100">Nueva
-                Colección 2024</span>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tighter reveal-on-scroll">
-                Carmen
-            </h1>
-            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-lg mx-auto font-light reveal-on-scroll"
-                style="transition-delay: 100ms;">
-                Redefiniendo el lujo con simplicidad, calidad y carácter artesanal.
-            </p>
-            <a href="#collection" class="inline-block btn-premium btn-premium-accent reveal-on-scroll delay-300">
-                Ver Colección
-            </a>
+                <!-- Right Column (Handbag Artwork with Interactive Depth) -->
+                <div class="lg:col-span-5 flex items-center justify-center relative mt-4 lg:mt-0">
+                    <div id="hero-bag-wrapper" class="w-full max-w-[360px] lg:max-w-[420px] bag-float transition-transform duration-200 ease-out">
+                        <img src="images/bag-hero.svg" alt="Cartera Carmen Colección Otoño" class="w-full h-auto drop-shadow-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Collection Section ("La colección") -->
+    <section id="collection" class="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <!-- Section Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-stone-900 tracking-tight">
+                La colección
+            </h2>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex items-center space-x-6 text-xs md:text-sm">
+                <button class="cat-filter-btn font-semibold text-stone-900 border-b-2 border-stone-900 pb-1 cursor-pointer transition-colors"
+                    data-category="all">Todos</button>
+                <button class="cat-filter-btn text-stone-600 hover:text-stone-900 pb-1 cursor-pointer transition-colors"
+                    data-category="Bolsos">Bolsos</button>
+                <button class="cat-filter-btn text-stone-600 hover:text-stone-900 pb-1 cursor-pointer transition-colors"
+                    data-category="Carteras">Carteras</button>
+                <button class="cat-filter-btn text-stone-600 hover:text-stone-900 pb-1 cursor-pointer transition-colors"
+                    data-category="Billeteras">Billeteras</button>
+            </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-white/80">
-            <a href="#collection" aria-label="Desplazar a la colección">
-                <span class="material-icons text-3xl">keyboard_arrow_down</span>
-            </a>
+        <!-- Product Grid (3 columns on large displays) -->
+        <div id="collection-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Renderizado dinámicamente desde products.js -->
         </div>
     </section>
 
-    <!-- Main Container for Content -->
-    <div class="max-w-7xl mx-auto px-4 md:px-6 relative">
-
-        <!-- Collection Grid -->
-        <section id="collection" class="py-20">
-            <div class="text-center mb-10 reveal-on-scroll">
-                <span class="text-xs uppercase tracking-widest text-primary font-bold">Catálogo Artesanal</span>
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mt-1">Nuestra Colección</h2>
-                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <!-- Category Filter Tabs -->
-            <div class="flex flex-wrap items-center justify-center gap-2 mb-12 reveal-on-scroll">
-                <button class="cat-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-gray-900 text-white shadow-sm" data-category="all">Todos</button>
-                <button class="cat-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Bolsos">Bolsos</button>
-                <button class="cat-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Carteras">Carteras</button>
-                <button class="cat-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Billeteras">Billeteras</button>
-            </div>
-
-            <!-- Product Grid -->
-            <div id="collection-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-                <!-- Renderizado dinámicamente desde products.js -->
-            </div>
-        </section>
-
-        <!-- About Us -->
-        <section id="about" class="py-20 bg-white rounded-3xl p-6 md:p-12 mb-20 shadow-sm reveal-on-scroll">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-md">
-                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
-                        alt="Maestro artesano trabajando en cuero" class="absolute inset-0 w-full h-full object-cover">
-                </div>
-                <div class="md:pl-6">
-                    <span class="text-primary font-bold tracking-widest uppercase text-xs mb-2 block">Nuestra Historia</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">Sobre Carmen</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        En Carmen, creemos que el verdadero lujo reside en la simplicidad, la durabilidad y la nobleza de los materiales.
-                        Cada una de nuestras piezas es confeccionada a mano por maestros artesanos, preservando técnicas tradicionales de marroquinería.
-                    </p>
-                    <p class="text-gray-500 text-base leading-relaxed mb-8">
-                        Utilizamos solo cueros seleccionados de grano completo, curtidos vegetalmente para respetar el medio ambiente y asegurar una pátina única que mejora con el paso del tiempo.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gray-100">
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-2xl mb-1">100%</h4>
-                            <p class="text-xs text-gray-500 uppercase tracking-wider">Hecho a Mano</p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-2xl mb-1">Premium</h4>
-                            <p class="text-xs text-gray-500 uppercase tracking-wider">Cueros Seleccionados</p>
-                        </div>
+    <!-- Craftsmanship Section ("Elegimos cada piel a mano...") -->
+    <section id="about" class="bg-[#EFE9DF] py-20 md:py-28 px-4 md:px-8 border-y border-stone-200/60">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <!-- Left Craft Block with Stitching -->
+            <div class="lg:col-span-5 flex items-center justify-center">
+                <div class="rounded-3xl bg-[#9C4C13] aspect-square w-full max-w-[380px] md:max-w-[420px] flex items-center justify-center shadow-sm relative overflow-hidden p-8 group hover:scale-[1.02] transition-transform duration-500">
+                    <!-- Wax thread stitches: — — — — — — -->
+                    <div id="stitches-container" class="flex items-center gap-2.5 sm:gap-3.5">
+                        <span class="stitch-mark w-6 sm:w-8 h-1 bg-white/80 rounded-full" style="animation-delay: 0ms"></span>
+                        <span class="stitch-mark w-6 sm:w-8 h-1 bg-white/80 rounded-full" style="animation-delay: 130ms"></span>
+                        <span class="stitch-mark w-6 sm:w-8 h-1 bg-white/80 rounded-full" style="animation-delay: 260ms"></span>
+                        <span class="stitch-mark w-6 sm:w-8 h-1 bg-white/80 rounded-full" style="animation-delay: 390ms"></span>
+                        <span class="stitch-mark w-6 sm:w-8 h-1 bg-white/80 rounded-full" style="animation-delay: 520ms"></span>
+                        <span class="stitch-mark w-6 sm:w-8 h-1 bg-white/80 rounded-full" style="animation-delay: 650ms"></span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Testimonials -->
-        <section class="py-24 bg-transparent border-t border-gray-200/60 reveal-on-scroll">
-            <div class="text-center mb-16">
-                <span class="text-xs uppercase tracking-widest text-primary font-bold">Experiencias</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mt-1">Lo que dicen nuestros clientes</h2>
-                <p class="text-gray-500 max-w-xl mx-auto mt-2 text-sm">Historias de quienes eligen piezas hechas para durar toda la vida.</p>
-            </div>
+            <!-- Right Editorial Content & Stats -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-stone-900 leading-tight mb-6 tracking-tight [text-wrap:balance]">
+                    Elegimos cada piel a mano, una por una.
+                </h2>
+                <p class="text-sm md:text-base text-stone-800 leading-relaxed max-w-xl mb-10 font-light">
+                    Trabajamos con curtido vegetal, un proceso lento que deja el cuero firme y capaz de oscurecerse con el uso. Cada costura es de hilo encerado, puntada por puntada.
+                </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-                <!-- Review 1 -->
-                <div class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100/60">
-                    <div class="mb-5 text-primary opacity-90">
-                        <span class="material-icons text-3xl">format_quote</span>
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-stone-300/60 max-w-xl">
+                    <div>
+                        <p class="font-serif text-3xl md:text-4xl font-normal text-stone-900 mb-1">14 h</p>
+                        <p class="text-xs text-stone-700 font-medium">de trabajo por bolso</p>
                     </div>
-                    <p class="text-lg font-serif italic text-gray-800 mb-6 leading-relaxed">
-                        "La calidad del cuero es impresionante. Se nota el amor y la dedicación en cada costura. Ya es mi bolso favorito de todos los días."
-                    </p>
-                    <div class="mt-auto">
-                        <h4 class="font-bold text-xs tracking-widest uppercase text-gray-900 mb-0.5">María C.</h4>
-                        <p class="text-xs text-gray-400 font-medium">Madrid, España</p>
+                    <div>
+                        <p class="font-serif text-3xl md:text-4xl font-normal text-stone-900 mb-1">100%</p>
+                        <p class="text-xs text-stone-700 font-medium">curtido vegetal</p>
                     </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100/60">
-                    <div class="mb-5 text-primary opacity-90">
-                        <span class="material-icons text-3xl">format_quote</span>
-                    </div>
-                    <p class="text-lg font-serif italic text-gray-800 mb-6 leading-relaxed">
-                        "Buscaba un bolso que fuera sobrio, elegante y a la vez funcional para el trabajo. El Bolso Tote superó mis expectativas con creces."
-                    </p>
-                    <div class="mt-auto">
-                        <h4 class="font-bold text-xs tracking-widest uppercase text-gray-900 mb-0.5">Laura R.</h4>
-                        <p class="text-xs text-gray-400 font-medium">Buenos Aires, Argentina</p>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100/60">
-                    <div class="mb-5 text-primary opacity-90">
-                        <span class="material-icons text-3xl">format_quote</span>
-                    </div>
-                    <p class="text-lg font-serif italic text-gray-800 mb-6 leading-relaxed">
-                        "El empaque es exquisito y la atención personalizada por WhatsApp fue impecable. Es el regalo perfecto para alguien especial."
-                    </p>
-                    <div class="mt-auto">
-                        <h4 class="font-bold text-xs tracking-widest uppercase text-gray-900 mb-0.5">Sofía P.</h4>
-                        <p class="text-xs text-gray-400 font-medium">Ciudad de México</p>
+                    <div>
+                        <p class="font-serif text-3xl md:text-4xl font-normal text-stone-900 mb-1">5 años</p>
+                        <p class="text-xs text-stone-700 font-medium">de garantía</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="py-16 border-t border-gray-200/60 mt-16">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-                <!-- Brand -->
-                <div class="col-span-1">
-                    <a href="#" class="flex items-center gap-2 mb-4">
-                        <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                        <span class="text-lg font-bold text-black">Carmen</span>
-                    </a>
-                    <p class="text-sm text-gray-500 leading-relaxed">
-                        Artesanía y diseño moderno en cada pieza de marroquinería de lujo.
+    <!-- Testimonials Section ("Lo que cuentan quienes ya la llevan") -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-28">
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-stone-900 mb-14 tracking-tight [text-wrap:balance]">
+            Lo que cuentan quienes ya la llevan
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Review 1 -->
+            <div class="border-l border-stone-300 pl-6 flex flex-col justify-between py-1">
+                <p class="font-serif text-lg md:text-xl italic text-stone-900 leading-snug mb-4">
+                    "Lo uso todos los días hace dos años y está mejor que el primer día."
+                </p>
+                <p class="text-xs text-stone-600 font-medium">Lucía M., Palermo</p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="border-l border-stone-300 pl-6 flex flex-col justify-between py-1">
+                <p class="font-serif text-lg md:text-xl italic text-stone-900 leading-snug mb-4">
+                    "Pedí mis iniciales en foil dorado como regalo. Quedó perfecta."
+                </p>
+                <p class="text-xs text-stone-600 font-medium">Andrés R., Rosario</p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="border-l border-stone-300 pl-6 flex flex-col justify-between py-1">
+                <p class="font-serif text-lg md:text-xl italic text-stone-900 leading-snug mb-4">
+                    "Me ayudaron a elegir el tono por WhatsApp en minutos."
+                </p>
+                <p class="text-xs text-stone-600 font-medium">Camila S., Córdoba</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#EFE9DF] border-t border-stone-200/80 py-16 md:py-20 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-4">
+                    <span class="font-serif text-2xl font-normal text-stone-900 mb-3 block">Carmen</span>
+                    <p class="text-xs text-stone-600 leading-relaxed max-w-xs font-light">
+                        Atelier de cuero y marroquinería de lujo.<br>Buenos Aires.
                     </p>
                 </div>
 
-                <!-- Links 1 -->
-                <div>
-                    <h4 class="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Comprar</h4>
-                    <ul class="space-y-2 text-sm text-gray-500">
+                <!-- Comprar -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xs font-bold text-stone-900 uppercase tracking-widest mb-4">Comprar</h3>
+                    <ul class="space-y-2 text-xs text-stone-600">
                         <li><a href="#collection" data-filter="Bolsos" class="nav-category-link hover:text-primary transition-colors">Bolsos</a></li>
                         <li><a href="#collection" data-filter="Carteras" class="nav-category-link hover:text-primary transition-colors">Carteras</a></li>
                         <li><a href="#collection" data-filter="Billeteras" class="nav-category-link hover:text-primary transition-colors">Billeteras</a></li>
                     </ul>
                 </div>
 
-                <!-- Links 2 -->
-                <div>
-                    <h4 class="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Ayuda & Envíos</h4>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Política de Envíos</a></li>
-                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Cambios y Devoluciones</a></li>
-                        <li><a href="#about" class="hover:text-primary transition-colors">Sobre Nosotros</a></li>
+                <!-- Atención -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xs font-bold text-stone-900 uppercase tracking-widest mb-4">Atención</h3>
+                    <ul class="space-y-2 text-xs text-stone-600">
+                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Envíos y devoluciones</a></li>
+                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Cuidado del cuero</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
                     </ul>
                 </div>
 
-                <!-- Social -->
-                <div>
-                    <h4 class="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Síguenos</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </a>
-                    </div>
+                <!-- Newsletter -->
+                <div class="md:col-span-4">
+                    <h3 class="text-xs font-bold text-stone-900 uppercase tracking-widest mb-4">Newsletter</h3>
+                    <p class="text-xs text-stone-700 mb-4 font-medium">
+                        Novedades del taller, una vez al mes.
+                    </p>
+                    <form onsubmit="event.preventDefault(); alert('¡Gracias por unirte al atelier!'); this.reset();" class="flex flex-col sm:flex-row gap-2 max-w-sm">
+                        <input type="email" required placeholder="tu@email.com"
+                            class="px-4 py-2.5 rounded-full text-xs bg-white text-stone-900 border border-stone-300 placeholder-stone-600 focus:outline-none focus:border-stone-900 flex-1">
+                        <button type="submit"
+                            class="px-5 py-2.5 rounded-full text-xs font-semibold bg-stone-900 text-white hover:bg-stone-800 transition-colors cursor-pointer">
+                            Suscribirme
+                        </button>
+                    </form>
                 </div>
             </div>
 
-            <div class="mt-12 pt-8 border-t border-gray-200/60 text-center">
-                <p class="text-xs text-gray-400">&copy; 2024 Carmen. Todos los derechos reservados.</p>
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-stone-300/60 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-700 gap-4">
+                <p>&copy; 2026 Carmen Atelier</p>
+                <p class="text-stone-700 font-medium">Hecho a mano en Argentina</p>
             </div>
-        </footer>
-
-    </div>
+        </div>
+    </footer>
 
     <!-- Shopping Cart Sidebar -->
     <div id="cart-sidebar"
         class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
-        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+        <div class="p-6 border-b border-stone-200 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <span class="material-icons text-primary">shopping_bag</span>
-                <h2 class="text-xl font-bold text-gray-900">Tu Bolsa</h2>
+                <h2 class="text-xl font-serif font-bold text-stone-900">Tu Bolsa</h2>
             </div>
-            <button id="close-cart" class="text-gray-400 hover:text-gray-900 transition-colors">
+            <button id="close-cart" class="text-stone-600 hover:text-stone-900 transition-colors" title="Cerrar bolsa">
                 <span class="material-icons text-2xl">close</span>
             </button>
         </div>
+
+        <!-- Free Shipping Progress Bar -->
+        <div id="free-shipping-bar-container" class="px-6 py-3.5 bg-stone-50 border-b border-stone-200">
+            <div class="flex items-center justify-between text-xs font-medium mb-1.5" id="free-shipping-text">
+                <span class="flex items-center gap-1.5 text-stone-700 font-medium">
+                    <span class="material-icons text-sm text-primary">local_shipping</span>
+                    <span>Envío estándar bonificado desde $150.000</span>
+                </span>
+            </div>
+            <div class="w-full h-1.5 bg-stone-200 rounded-full overflow-hidden">
+                <div id="free-shipping-progress" class="h-full bg-primary rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+
         <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
             <!-- Items inyectados por cart.js -->
         </div>
-        <div class="p-6 border-t border-gray-100 bg-gray-50/70">
-            <div class="flex justify-between items-center mb-5">
-                <span class="text-gray-600 font-medium text-sm">Subtotal Estimado</span>
-                <span id="cart-total" class="text-xl font-bold text-gray-900">$0.00</span>
+
+        <div class="p-6 border-t border-stone-200 bg-stone-50/70">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-stone-700 font-medium text-sm">Subtotal Estimado</span>
+                <span id="cart-total" class="text-xl font-bold text-stone-900">$0</span>
             </div>
+
+            <!-- Express Checkout Fields -->
+            <div class="mb-4 pt-3.5 border-t border-stone-200">
+                <p class="text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">Datos para el despacho (opcional)</p>
+                <div class="space-y-2">
+                    <div class="relative">
+                        <span class="material-icons text-stone-600 absolute left-2.5 top-2.5 text-base">person_outline</span>
+                        <input type="text" id="checkout-customer-name" placeholder="Tu nombre y apellido" autocomplete="name"
+                            class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-stone-200 bg-white text-stone-900 placeholder-stone-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                    </div>
+                    <div class="relative">
+                        <span class="material-icons text-stone-600 absolute left-2.5 top-2.5 text-base">location_on</span>
+                        <input type="text" id="checkout-customer-city" placeholder="Ciudad o dirección de entrega" autocomplete="address-level2"
+                            class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-stone-200 bg-white text-stone-900 placeholder-stone-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                    </div>
+                </div>
+            </div>
+
             <button id="checkout-btn"
                 class="w-full btn-premium btn-premium-primary flex items-center justify-center gap-2">
                 <span class="material-icons text-sm">whatsapp</span>
@@ -522,14 +410,35 @@
     <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300">
     </div>
 
+    <!-- Favorites Sidebar -->
+    <div id="fav-sidebar"
+        class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div class="p-6 border-b border-stone-200 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-icons text-red-500">favorite</span>
+                <h2 class="text-xl font-serif font-bold text-stone-900">Tus Favoritos</h2>
+            </div>
+            <button id="close-fav" class="text-stone-600 hover:text-stone-900 transition-colors" title="Cerrar favoritos">
+                <span class="material-icons text-2xl">close</span>
+            </button>
+        </div>
+        <div id="fav-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Items inyectados por favorites.js -->
+        </div>
+    </div>
+    <!-- Favorites Overlay -->
+    <div id="fav-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300">
+    </div>
+
     <!-- Scripts de Datos y Módulos -->
     <script src="products.js"></script>
     <script src="cart.js"></script>
+    <script src="favorites.js"></script>
     <script src="search.js"></script>
 
     <!-- Lógica de Página Principal -->
     <script>
-        // Renderizar Colección Dinámica con Filtros
+        // Renderizar Colección Dinámica según Diseño Mockup
         function renderCollection(category = 'all') {
             const grid = document.getElementById('collection-grid');
             if (!grid) return;
@@ -541,32 +450,73 @@
 
             filtered.forEach((product, idx) => {
                 const card = document.createElement('div');
-                card.className = 'group cursor-pointer block bg-white p-3 rounded-2xl border border-gray-100/80 shadow-sm hover:shadow-md transition-all reveal-on-scroll';
-                card.style.transitionDelay = `${(idx % 4) * 80}ms`;
+                card.className = 'group flex flex-col cursor-pointer';
+
+                const isFav = (typeof window.CarmenFavorites !== 'undefined' && window.CarmenFavorites.isFavorite) 
+                    ? window.CarmenFavorites.isFavorite(product.id) 
+                    : false;
+
+                // Color Swatches
+                const colors = product.colors || [{ name: "Original", hex: "#BF7C43", image: product.image }];
+                const swatchesHtml = colors.map((c, cIdx) => `
+                    <button type="button" 
+                        onclick="event.preventDefault(); event.stopPropagation(); switchCardImage(${product.id}, '${c.image}', this, '${c.name}');"
+                        class="w-3.5 h-3.5 rounded-full border border-black/15 shadow-2xs inline-block transition-transform hover:scale-125 focus:outline-none ${cIdx === 0 ? 'ring-2 ring-stone-900 ring-offset-1 scale-110' : ''}"
+                        style="background-color: ${c.hex};" 
+                        title="${c.name}">
+                    </button>
+                `).join('');
+
                 card.innerHTML = `
-                    <div class="relative overflow-hidden rounded-xl aspect-[4/5] mb-4 bg-gray-100">
-                        <img src="${product.image}"
-                            alt="${product.name}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md text-gray-800">${product.category}</span>
-                        <!-- Quick Add Button -->
-                        <button onclick="event.preventDefault(); event.stopPropagation(); window.CarmenCart.addToCart(PRODUCTS.find(p => p.id === ${product.id}));" 
-                            class="absolute bottom-2.5 right-2.5 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-md flex items-center justify-center text-gray-800 hover:bg-primary hover:text-white transition-all transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
+                    <!-- Image Card Container -->
+                    <div class="relative bg-[#EFE9DF] rounded-[28px] aspect-[3.8/4.2] p-8 flex items-center justify-center overflow-hidden mb-4 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-leather">
+                        <!-- Favorite Button Top Right -->
+                        <button onclick="event.preventDefault(); event.stopPropagation(); window.CarmenFavorites.toggleFavorite(${product.id});" 
+                            class="favorite-card-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-stone-700 hover:text-red-500 transition-all shadow-2xs z-10 hover:scale-110"
+                            title="${isFav ? 'Quitar de favoritos' : 'Guardar en favoritos'}"
+                            data-product-id="${product.id}">
+                            <span class="material-icons text-base ${isFav ? 'text-red-500' : ''}">${isFav ? 'favorite' : 'favorite_border'}</span>
+                        </button>
+
+                        <!-- Centered Handbag Artwork with soft crossfade -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <img id="card-img-${product.id}" 
+                                src="${product.image}"
+                                alt="${product.name}"
+                                onerror="this.onerror=null; this.src='images/bag-isabel.svg';"
+                                class="card-bag-img w-full max-w-[280px] h-auto object-contain transition-all duration-300 drop-shadow-sm group-hover:scale-105">
+                        </div>
+
+                        <!-- Quick Add Button Bottom Right -->
+                        <button onclick="event.preventDefault(); event.stopPropagation(); window.CarmenCart.addToCart(PRODUCTS.find(p => p.id === ${product.id}), 1, { color: '${colors[0].name}' });" 
+                            class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-md hover:bg-primary z-10 hover:scale-105 active:scale-95"
                             title="Añadir a la bolsa">
-                            <span class="material-icons text-lg">add_shopping_bag</span>
+                            <span class="material-icons text-sm">shopping_bag</span>
                         </button>
                     </div>
+
+                    <!-- Meta Information -->
                     <div class="flex flex-col items-start px-1">
-                        <h3 class="text-base font-bold text-gray-900 group-hover:text-primary transition-colors mb-0.5 leading-snug">${product.name}</h3>
-                        <span class="text-sm font-bold text-primary mb-2">${product.price}</span>
-                        <a href="product.html?id=${product.id}" class="text-xs font-semibold text-gray-400 group-hover:text-gray-900 transition-colors inline-flex items-center gap-1">
-                            Ver Detalles <span class="material-icons text-xs">arrow_forward</span>
-                        </a>
+                        <!-- Color Dots -->
+                        <div class="flex items-center gap-2 mb-2">
+                            ${swatchesHtml}
+                        </div>
+                        <!-- Product Title -->
+                        <h3 class="font-serif text-xl font-bold text-stone-900 group-hover:text-primary transition-colors leading-snug">
+                            ${product.name}
+                        </h3>
+                        <!-- Subtitle / Material Descriptor -->
+                        <p id="card-sub-${product.id}" class="text-xs text-stone-600 mt-0.5 transition-opacity duration-200">
+                            ${product.subtitle || product.category}
+                        </p>
+                        <!-- Price -->
+                        <p class="font-serif text-base font-bold text-stone-900 mt-2">
+                            ${product.price}
+                        </p>
                     </div>
                 `;
 
                 card.addEventListener('click', (e) => {
-                    // Evitar clic si se pulsó el botón de quick add
                     if (e.target.closest('button')) return;
                     window.location.href = `product.html?id=${product.id}`;
                 });
@@ -574,17 +524,74 @@
                 grid.appendChild(card);
             });
 
-            // Activar observador de animación
-            const observer = new IntersectionObserver((entries, obs) => {
+            if (window.CarmenFavorites && window.CarmenFavorites.updateHeartIcons) {
+                window.CarmenFavorites.updateHeartIcons();
+            }
+        }
+
+        // Intercambiar suavemente imagen de tarjeta y tono al pulsar un swatch
+        function switchCardImage(productId, newImgSrc, btnEl, colorName) {
+            const img = document.getElementById(`card-img-${productId}`);
+            const sub = document.getElementById(`card-sub-${productId}`);
+            if (img && newImgSrc) {
+                img.style.opacity = '0';
+                img.style.transform = 'scale(0.97)';
+                setTimeout(() => {
+                    img.src = newImgSrc;
+                    img.style.opacity = '1';
+                    img.style.transform = 'scale(1)';
+                }, 150);
+            }
+            if (sub && colorName) {
+                sub.textContent = `Tono: ${colorName}`;
+            }
+            if (btnEl) {
+                const parent = btnEl.parentElement;
+                if (parent) {
+                    parent.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('ring-2', 'ring-stone-900', 'ring-offset-1', 'scale-110');
+                    });
+                    btnEl.classList.add('ring-2', 'ring-stone-900', 'ring-offset-1', 'scale-110');
+                }
+            }
+        }
+
+        // Parallax 3D interactivo en la cartera del Hero
+        function initHeroParallax() {
+            const heroSection = document.getElementById('hero-section');
+            const heroBag = document.getElementById('hero-bag-wrapper');
+            if (!heroSection || !heroBag) return;
+
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = -(y / rect.height) * 12;
+                const rotateY = (x / rect.width) * 12;
+                heroBag.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-6px)`;
+            });
+
+            heroSection.addEventListener('mouseleave', () => {
+                heroBag.style.transform = '';
+            });
+        }
+
+        // Animación artesanal secuencial de costuras en "El Atelier"
+        function initStitchAnimation() {
+            const container = document.getElementById('stitches-container');
+            if (!container) return;
+
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
+                        const stitches = container.querySelectorAll('.stitch-mark');
+                        stitches.forEach(s => s.classList.add('stitch-visible'));
+                        observer.unobserve(container);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.2 });
 
-            grid.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+            observer.observe(container);
         }
 
         // Manejo de pestañas de filtro de categoría
@@ -594,9 +601,9 @@
                 btn.addEventListener('click', () => {
                     const cat = btn.getAttribute('data-category');
                     filterBtns.forEach(b => {
-                        b.className = 'cat-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-gray-100 text-gray-600 hover:bg-gray-200';
+                        b.className = 'cat-filter-btn text-stone-500 hover:text-stone-900 pb-1 cursor-pointer transition-colors';
                     });
-                    btn.className = 'cat-filter-btn px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-gray-900 text-white shadow-sm';
+                    btn.className = 'cat-filter-btn font-semibold text-stone-900 border-b-2 border-stone-900 pb-1 cursor-pointer transition-colors';
                     renderCollection(cat);
                 });
             });
@@ -614,68 +621,52 @@
             });
         }
 
-        // Navbar Scroll
-        function setupNavbarScroll() {
-            const navbar = document.getElementById('navbar');
-            if (!navbar) return;
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 40) {
-                    navbar.classList.remove('nav-transparent', 'py-6');
-                    navbar.classList.add('nav-scrolled', 'py-4');
-                } else {
-                    navbar.classList.add('nav-transparent', 'py-6');
-                    navbar.classList.remove('nav-scrolled', 'py-4');
-                }
-            });
-        }
-
-        // Mobile Menu
+        // Menú móvil
         function setupMobileMenu() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-mobile-menu');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
 
-            if (!mobileMenuBtn || !mobileMenu) return;
+            if (!menuBtn || !menu) return;
 
-            function toggleMobileMenu() {
-                const isClosed = mobileMenu.classList.contains('translate-x-full');
-                if (isClosed) {
-                    mobileMenu.classList.remove('translate-x-full');
+            function toggleMenu(show) {
+                if (show) {
+                    menu.classList.remove('translate-x-full');
                     document.body.style.overflow = 'hidden';
                 } else {
-                    mobileMenu.classList.add('translate-x-full');
+                    menu.classList.add('translate-x-full');
                     document.body.style.overflow = '';
                 }
             }
 
-            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-            if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
-            mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+            menuBtn.addEventListener('click', () => toggleMenu(true));
+            if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
+            links.forEach(l => l.addEventListener('click', () => toggleMenu(false)));
         }
 
-        // Animación al scroll general
-        function setupScrollAnimations() {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-        }
-
-        // Inicializar
-        window.addEventListener('DOMContentLoaded', () => {
+        // Inicialización al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
             renderCollection('all');
             setupCategoryFilters();
-            setupNavbarScroll();
             setupMobileMenu();
-            setupScrollAnimations();
+            initHeroParallax();
+            initStitchAnimation();
+
+            // Mobile search button
+            const mobileSearchBtn = document.getElementById('search-btn-mobile');
+            if (mobileSearchBtn) {
+                mobileSearchBtn.addEventListener('click', () => {
+                    const overlay = document.getElementById('search-overlay');
+                    const input = document.getElementById('search-input');
+                    if (overlay) {
+                        overlay.classList.remove('hidden');
+                        setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                        if (input) setTimeout(() => input.focus(), 100);
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
 
             // Lenis Smooth Scroll
             if (typeof Lenis === 'function') {

@@ -12,94 +12,59 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
 
-    <!-- Google Fonts: Manrope -->
+    <!-- Google Fonts: Manrope & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#cf7317', // Terracota/Orange
-                        background: '#FAF9F7', // Soft cream
-                        'beige-dark': '#EBE5D9',
-                        text: {
-                            dark: '#1a1a1a',
-                            medium: '#4a4a4a',
-                            light: '#8a8a8a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #FAF9F7;
-        }
-
-        /* Premium Button Styles */
-        .btn-premium {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-premium-primary {
-            background-color: #1a1a1a;
-            color: white;
-        }
-
-        .btn-premium-primary:hover {
-            background-color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <!-- Estilos Compilados (Tailwind CSS + Custom) -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="text-text-dark font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Navbar (Simplified) -->
-    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm py-4">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
-                <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                Carmen
-            </a>
-            <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
-                <span class="material-icons text-sm">arrow_back</span>
-                Volver a la tienda
-            </a>
+    <!-- Header & Announcement Bar Wrapper -->
+    <div class="fixed top-0 left-0 w-full z-50">
+        <!-- Top Announcement Bar -->
+        <div class="bg-stone-950 text-stone-300 py-2 px-4 text-center text-[11px] sm:text-xs tracking-[0.2em] uppercase font-medium border-b border-white/5">
+            <div class="max-w-7xl mx-auto flex items-center justify-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar whitespace-nowrap">
+                <span>Envíos a todo el país</span>
+                <span class="text-stone-600 text-xs">•</span>
+                <span>Grabado artesanal sin cargo</span>
+                <span class="text-stone-600 text-xs">•</span>
+                <span>Packaging de regalo</span>
+            </div>
         </div>
-    </header>
+
+        <!-- Navbar (Simplified) -->
+        <header class="w-full bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-7 h-7 rounded-full border border-stone-800 flex items-center justify-center transition-all group-hover:border-primary group-hover:scale-105">
+                        <span class="font-serif italic text-xs font-semibold text-stone-900">C</span>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="font-serif text-lg md:text-xl tracking-[0.22em] uppercase font-normal text-stone-900 transition-colors">Carmen</span>
+                        <span class="text-[11px] tracking-[0.22em] uppercase font-medium text-stone-500 transition-colors mt-0.5">Atelier de Cuero</span>
+                    </div>
+                </a>
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-primary transition-colors flex items-center gap-1.5">
+                    <span class="material-icons text-sm">arrow_back</span>
+                    Volver a la tienda
+                </a>
+            </div>
+        </header>
+    </div>
 
     <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center px-6">
+    <main class="flex-grow flex items-center justify-center px-6 pt-24">
         <div class="text-center max-w-lg mx-auto mt-20">
-            <h1 class="text-9xl font-bold text-gray-200 mb-4">404</h1>
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Página no encontrada</h2>
+            <h1 class="text-9xl font-serif font-light text-stone-500 mb-4 tracking-widest">404</h1>
+            <h2 class="text-3xl md:text-4xl font-serif font-normal text-gray-900 mb-4 tracking-tight">Página no encontrada</h2>
             <p class="text-gray-600 mb-10 leading-relaxed">
                 Lo sentimos, la página que estás buscando no existe o ha sido movida.
                 Pero no te preocupes, siempre puedes volver a descubrir nuestra colección.
@@ -113,7 +78,7 @@
     <!-- Footer (Simplified) -->
     <footer class="py-12 border-t border-gray-200/60 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm text-gray-400">
+            <p class="text-xs text-stone-600">
                 &copy; 2024 Carmen. Todos los derechos reservados.
             </p>
         </div>

@@ -1,19 +1,19 @@
-# 👜 Carmen — Marroquinería de Lujo & Diseño Atemporal
+# 👜 Carmen Atelier — Marroquinería de Lujo & Diseño Atemporal
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-[![Responsive](https://img.shields.io/badge/Responsive-Mobile_First-blueviolet?style=for-the-badge)](https://carmen.com)
+[![Impeccable Style](https://img.shields.io/badge/Impeccable-0_Anti--patterns-success?style=for-the-badge)](https://impeccable.style)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](LICENSE)
 
-> Tienda web y landing page de alta gama para una firma boutique de marroquinería y carteras de cuero artesanal. Diseñada bajo la filosofía visual del *quiet luxury*, combinando una estética editorial cálida, microinteracciones fluidas y un flujo de conversión directo vía WhatsApp.
+> Tienda web y landing page de alta gama para **Carmen Atelier**, firma boutique de marroquinería y carteras de autor en cuero curtido vegetal hecha en Buenos Aires. Diseñada bajo la filosofía del *quiet luxury*, combinando una estética editorial táctil, microinteracciones fluidas y un flujo de conversión directo vía WhatsApp.
 
 ---
 
 ## 🌟 Vista Previa y Demo en Vivo
 
 Puedes explorar el sitio en vivo a través de **GitHub Pages**:
-👉 **[Ver Demo de Carmen Marroquinería](https://luchonicolini.github.io/Carmen-Carteras-/)**
+👉 **[Ver Demo de Carmen Atelier](https://luchonicolini.github.io/Carmen-Carteras-/)**
 
 *(Para habilitar GitHub Pages en tu fork: dirígete a `Settings` > `Pages` > `Build and deployment` > seleccionar Branch `main` y carpeta `/ (root)`).*
 
@@ -22,43 +22,64 @@ Puedes explorar el sitio en vivo a través de **GitHub Pages**:
 ## ✨ Características Principales
 
 ### 🎨 Experiencia Visual y Diseño ("Quiet Luxury")
-- **Paleta editorial:** Tonos terracota (`#cf7317`), cremas cálidos (`#FAF9F7`) y contraste tipográfico con la fuente **Manrope**.
-- **Desplazamiento sedoso (*Smooth Scroll*):** Integración nativa con **Studio Freight Lenis** para una sensación de navegación suave y moderna.
-- **Transición de Navbar reactiva:** Cabecera transparente con tipografía blanca sobre el hero que muta a fondo sólido con `backdrop-blur` al hacer scroll.
-- **Efectos de revelado progresivo:** Animaciones de entrada sincronizadas mediante `IntersectionObserver`.
+- **Paleta editorial cálida:** Tonos arena suave (`#EFE9DF`), cuero tostado artesanal (`#9C4C13`), marfil (`#FAF9F7`) y contraste tipográfico accesible (WCAG AA/AAA).
+- **Tipografía de alta costura:** Titulares en **Playfair Display** combinados con **Manrope** para textos y detalles técnicos.
+- **Suite de movimiento (*Motion Suite*):**
+  - **Parallax 3D:** La cartera del Hero responde al cursor con inclinación tridimensional e ingravidez orgánica (`bag-float`).
+  - **Costuras secuenciales:** Animación que traza las puntadas de hilo encerado en el bloque del atelier al hacer scroll.
+  - **Cross-fade de tonos:** Transición suave de imágenes al seleccionar diferentes muestras de cuero en catálogo.
+  - **Trazado magnético:** Línea guía fluida en enlaces de navegación al pasar el cursor.
+- **Desplazamiento sedoso (*Smooth Scroll*):** Integración con **Studio Freight Lenis**.
 
 ### 🛍️ Catálogo y Comercio Electrónico Liviano
-- **Catálogo centralizado:** Los productos se gestionan desde un único archivo [`products.js`](products.js) (nombres, categorías, precios numéricos, descripciones y galerías de fotos).
-- **Filtros por categoría en tiempo real:** Pestañas interactivas sobre el grid para alternar entre *Todos*, *Bolsos*, *Carteras* y *Billeteras* sin recargar.
-- **Buscador modal a pantalla completa:** Búsqueda instantánea con indexación de nombres, categorías y descripciones, accesible mediante icono o atajo de teclado (`Esc` para cerrar).
+- **Catálogo centralizado:** Piezas gestionadas desde [`products.js`](products.js) con soporte para variantes de color, especificaciones y precios.
+- **Piezas de autor destacadas:** Bolso Isabel, Tote Alba, Cartera Lola y Billetera Atelier.
+- **Muestrario interactivo:** Alterna tonos de cuero directamente en las tarjetas del catálogo sin recargar.
+- **Filtros por categoría:** Pestañas en tiempo real (*Todos*, *Bolsos*, *Carteras*, *Billeteras*).
+- **Buscador en tiempo real:** Modal overlay instantáneo con atajo `Esc`.
 
 ### 🛒 Carrito de Compras Off-Canvas ([`cart.js`](cart.js))
-- **Persistencia local:** Los artículos se guardan en el navegador (`localStorage`) para que el usuario no pierda su selección al cambiar de página.
-- **Contador flotante (*Badge*):** Indicador visual en tiempo real en la barra de navegación que muestra la cantidad exacta de productos en la bolsa.
-- **Gestor de cantidades:** Control para aumentar (`+`), disminuir (`-`) o eliminar piezas directamente desde el panel lateral.
-- **Checkout optimizado a WhatsApp:** Genera un mensaje estructurado con el detalle de los productos, cantidades y subtotal exacto para concretar el pedido de forma personalizada.
+- **Barra de envío gratis dinámica:** Progreso visual en tiempo real hacia el umbral de envío bonificado ($150.000).
+- **Checkout exprés para WhatsApp:** Campos opcionales para Nombre y Ciudad que se memorizan automáticamente y nutren el mensaje de despacho a WhatsApp.
+- **Persistencia local:** Guarda productos, tonos y monogramas en `localStorage`.
+- **Gestión de cantidades:** Control de unidades y eliminación ágil desde el panel lateral.
+
+### ❤️ Lista de Favoritos ([`favorites.js`](favorites.js))
+- **Wishlist global:** Marcador con forma de corazón en cada producto y acceso rápido desde el header con contador.
+- **Drawer dedicado:** Panel lateral para revisar piezas guardadas y moverlas directamente a la bolsa de compras.
 
 ### 🔍 Ficha de Producto Dinámica ([`product.html`](product.html))
-- **Lupa interactiva en imagen principal:** Efecto lupa que calcula las coordenadas del cursor (`xPercent`, `yPercent`) para apreciar el grano y costura del cuero.
-- **Galería de miniaturas sincronizada:** Múltiples ángulos y planos de detalle propios de cada artículo.
-- **Carrusel de piezas recomendadas:** Integrado con **Embla Carousel** para una experiencia táctil y fluida, excluyendo automáticamente el producto visualizado.
-- **Interacciones de usuario:** Botón de compartir con soporte de **Web Share API** (y copia al portapapeles con notificación *toast*) y selector de favoritos persistente.
+- **Selector de tonos sincronizado:** Muestras de color con actualización inmediata de fotografía y nombre.
+- **Grabado de iniciales en vivo (*Monogramming*):** Personalización en bajo relieve, foil dorado o plateado con previsualización en tag de cuero.
+- **Lupa interactiva en imagen principal:** Efecto lupa de alta precisión para apreciar el grano del cuero.
+- **Carrusel táctil de recomendados:** Impulsado por **Embla Carousel**.
 
 ---
 
 ## 📁 Estructura del Repositorio
 
-El proyecto cuenta con una arquitectura limpia y modular de frontend estático, lista para alojarse en cualquier CDN, GitHub Pages, Netlify o Vercel:
-
 ```text
 Carmen-Carteras-/
+├── css/
+│   └── styles.css          # CSS compilado y minificado de Tailwind
+├── src/
+│   └── input.css           # Punto de entrada de estilos, keyframes y directivas
+├── images/
+│   ├── bag-hero.svg        # Cartera insignia del Hero banner
+│   ├── bag-isabel.svg      # Silueta de Bolso Isabel
+│   ├── bag-alba.svg        # Silueta de Tote Alba
+│   └── bag-lola.svg        # Silueta de Cartera Lola
 ├── index.html              # Landing page principal y catálogo interactivo
-├── product.html            # Ficha de producto dinámica (?id=1..8)
-├── shipping-returns.html   # Información de envíos, tiempos y devoluciones
-├── 404.html                # Página de error 404 personalizada con enlace de retorno
-├── products.js             # Fuente única de verdad del catálogo y configuración de marca
-├── cart.js                 # Lógica global del carrito de compras y checkout
+├── product.html            # Ficha de producto dinámica (?id=1..6)
+├── shipping-returns.html   # Información de envíos y devoluciones
+├── 404.html                # Página de error 404 personalizada
+├── products.js             # Catálogo de productos y configuración de marca
+├── cart.js                 # Lógica de carrito, barra de envío y checkout
+├── favorites.js            # Módulo global de favoritos y wishlist drawer
 ├── search.js               # Buscador en tiempo real con modal overlay
+├── server.js               # Servidor local Node.js para desarrollo
+├── tailwind.config.js      # Configuración de diseño, fuentes y paleta
+├── package.json            # Scripts y dependencias
 ├── README.md               # Documentación completa del proyecto
 └── .gitignore              # Archivos y carpetas del sistema ignorados
 ```
@@ -70,69 +91,58 @@ Carmen-Carteras-/
 | Tecnología | Propósito |
 | :--- | :--- |
 | **HTML5 Semántico** | Estructura accesible con metadatos Open Graph / Twitter Card completos |
-| **Tailwind CSS (CDN)** | Maquetación responsiva basada en utilidades y diseño mobile-first |
+| **Tailwind CSS v3** | Compilación estática y ultra-liviana sin sobrecarga de CDN |
 | **Vanilla JavaScript (ES6+)** | Lógica modular sin dependencias pesadas de frameworks |
 | **Studio Freight Lenis** | Motor de smooth scrolling de alto rendimiento |
 | **Embla Carousel** | Carrusel táctil y liviano para productos relacionados |
-| **Google Fonts (Manrope)** | Tipografía geométrica moderna de alta legibilidad |
-| **Google Material Icons & SVGs** | Iconografía de interfaz e iconos vectoriales de marcas (WhatsApp, Instagram, Facebook) |
+| **Google Fonts** | *Playfair Display* (serif editorial) & *Manrope* (sans-serif técnica) |
+| **Impeccable Style** | Sistema de auditoría y calidad de interfaz de usuario |
 
 ---
 
 ## 🚀 Cómo Ejecutar el Proyecto Localmente
 
-No se requieren gestores de paquetes ni pasos de compilación complejos. Puedes correr el proyecto en 2 pasos:
-
 ### 1. Clonar el repositorio
 ```bash
 git clone https://github.com/luchonicolini/Carmen-Carteras-.git
 cd Carmen-Carteras-
+npm install
 ```
 
-### 2. Abrir en tu navegador
-Puedes abrir directamente el archivo `index.html` con doble clic o iniciar un servidor web local:
+### 2. Comandos disponibles
 
-**Con Node.js (npx serve):**
-```bash
-npx serve .
-```
-
-**Con Python:**
-```bash
-# Python 3
-python3 -m http.server 8000
-```
-
-**Con VS Code:**
-Haz clic derecho en `index.html` y selecciona **"Open with Live Server"**.
+| Comando | Descripción |
+| :--- | :--- |
+| `npm run build` | Compila y minifica el archivo `css/styles.css` para producción |
+| `npm run dev:css` | Modo observador (*watch*): recompila automáticamente al editar HTML o JS |
+| `npm start` | Inicia el servidor local en `http://localhost:3000` |
 
 ---
 
-## ⚙️ Personalización y Configuración
+## ⚙️ Personalización de Marca
 
 Toda la información del negocio se configura en las primeras líneas de [`products.js`](products.js):
 
 ```javascript
-// Configuración general de la marca
 const BRAND_CONFIG = {
-    name: "Carmen",
-    whatsappNumber: "5491100000000", // Ingresa aquí tu número con código de país
+    name: "Carmen Atelier",
+    tagline: "Atelier de cuero y marroquinería de lujo. Buenos Aires.",
+    whatsappNumber: "5491100000000", // Reemplazar con tu número internacional
+    freeShippingThreshold: 150000,   // Monto mínimo para envío bonificado
     cartStorageKey: "carmen_cart"
 };
 ```
-
-Para añadir un nuevo producto al catálogo, basta con agregar un nuevo objeto en el arreglo `PRODUCTS` dentro de [`products.js`](products.js) con sus respectivos atributos (`id`, `name`, `category`, `price`, `images`, `description`, `specs`).
 
 ---
 
 ## 👤 Autor
 
 Desarrollado por **Luciano Nicolini**  
-- GitHub: [@luchonicolini](https://github.com/luchonicolini)
+- GitHub: [@luchonicolini](https://github.com/luchonicolini)  
 - Contacto: `nicolini.luciano@hotmail.com`
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia [MIT](LICENSE). Siéntete libre de utilizarlo como inspiración o base para tus propios proyectos.
+Este proyecto está bajo la Licencia [MIT](LICENSE).

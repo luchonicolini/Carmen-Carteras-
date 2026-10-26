@@ -21,185 +21,17 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
 
-    <!-- Google Fonts: Manrope -->
+    <!-- Google Fonts: Manrope & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#cf7317', // Terracota / Cuero cálido
-                        background: '#FAF9F7', // Soft cream
-                        'beige-dark': '#EBE5D9',
-                        text: {
-                            dark: '#1a1a1a',
-                            medium: '#4a4a4a',
-                            light: '#8a8a8a'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #FAF9F7;
-        }
-
-        /* Scroll Animation Classes */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: all 0.7s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Zoom Effect */
-        .zoom-container {
-            overflow: hidden;
-            position: relative;
-            cursor: crosshair;
-        }
-
-        .zoom-container img {
-            transition: transform 0.1s ease-out;
-            transform-origin: center center;
-        }
-
-        .zoom-container:hover img {
-            transform: scale(1.9);
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Accordion animation */
-        details>summary {
-            list-style: none;
-        }
-
-        details>summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details[open] summary~* {
-            animation: sweep .3s ease-in-out;
-        }
-
-        @keyframes sweep {
-            0% {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        details[open] .chevron {
-            transform: rotate(180deg);
-        }
-
-        /* Lenis CSS */
-        html.lenis,
-        html.lenis body {
-            height: auto;
-        }
-
-        .lenis.lenis-smooth {
-            scroll-behavior: auto !important;
-        }
-
-        /* Premium Buttons */
-        .btn-premium {
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-premium-primary {
-            background-color: #1a1a1a;
-            color: white;
-        }
-
-        .btn-premium-primary:hover {
-            background-color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-premium-outline {
-            background-color: transparent;
-            border: 1px solid #d1d5db;
-            color: #1a1a1a;
-        }
-
-        .btn-premium-outline:hover {
-            border-color: #1a1a1a;
-            background-color: #fff;
-            transform: translateY(-2px);
-        }
-
-        /* Embla Carousel Styles */
-        .embla {
-            overflow: hidden;
-        }
-
-        .embla__container {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .embla__slide {
-            flex: 0 0 75%;
-            min-width: 0;
-        }
-
-        @media (min-width: 640px) {
-            .embla__slide {
-                flex: 0 0 45%;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .embla__slide {
-                flex: 0 0 23%;
-            }
-        }
-    </style>
+    <!-- Estilos Compilados (Tailwind CSS + Custom) -->
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Lenis Library -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
@@ -209,63 +41,84 @@
 
 <body class="text-text-dark font-sans antialiased">
 
-    <!-- Header -->
-    <header class="w-full py-5 px-4 md:px-8 bg-[#FAF9F7] sticky top-0 z-40 border-b border-gray-200/50 backdrop-blur-md bg-[#FAF9F7]/95">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="w-3 h-3 bg-primary rounded-sm group-hover:bg-black transition-colors"></div>
-                <span class="text-xl font-bold tracking-tighter text-black">Carmen</span>
-            </a>
-
-            <!-- Navigation (Desktop) -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="index.html#collection"
-                    class="text-sm font-medium text-gray-800 hover:text-primary transition-colors">Bolsos</a>
-                <a href="index.html#collection"
-                    class="text-sm font-medium text-gray-800 hover:text-primary transition-colors">Carteras</a>
-                <a href="index.html#collection"
-                    class="text-sm font-medium text-gray-800 hover:text-primary transition-colors">Billeteras</a>
-                <a href="index.html#about"
-                    class="text-sm font-medium text-gray-800 hover:text-primary transition-colors">Nosotros</a>
-            </nav>
-
-            <!-- Icons -->
-            <div class="flex items-center space-x-3">
-                <button id="search-btn"
-                    class="w-10 h-10 bg-[#EBE5D9] rounded-lg flex items-center justify-center text-gray-700 hover:bg-[#e0d6c2] transition-colors"
-                    title="Buscar productos">
-                    <span class="material-icons text-xl">search</span>
-                </button>
-                <button id="open-cart-btn"
-                    class="open-cart-btn w-10 h-10 bg-[#EBE5D9] rounded-lg flex items-center justify-center text-gray-700 hover:bg-[#e0d6c2] transition-colors relative"
-                    title="Ver tu bolsa de compras">
-                    <span class="material-icons text-xl">shopping_bag</span>
-                    <span class="cart-badge hidden absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full items-center justify-center">0</span>
-                </button>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden w-10 h-10 bg-[#EBE5D9] rounded-lg flex items-center justify-center text-gray-700 hover:bg-[#e0d6c2] transition-colors"
-                    title="Abrir menú">
-                    <span class="material-icons text-xl">menu</span>
-                </button>
-            </div>
+    <!-- Header & Announcement Bar Wrapper -->
+    <div class="sticky top-0 z-40">
+        <!-- Top Announcement Bar -->
+        <div class="bg-[#161412] text-[#FAF9F7] text-xs py-2 px-4 text-center tracking-wide font-medium">
+            Envíos a todo el país · Grabado artesanal sin cargo
         </div>
-    </header>
+
+        <!-- Header -->
+        <header class="w-full py-4 px-4 md:px-8 bg-white/95 border-b border-stone-200/70 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <!-- Navigation (Desktop) -->
+                <nav class="hidden md:flex space-x-7">
+                    <a href="index.html#collection" data-filter="Bolsos"
+                        class="text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">Bolsos</a>
+                    <a href="index.html#collection" data-filter="Carteras"
+                        class="text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">Carteras</a>
+                    <a href="index.html#collection" data-filter="Billeteras"
+                        class="text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">Billeteras</a>
+                    <a href="index.html#about"
+                        class="text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors">El atelier</a>
+                </nav>
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-6 h-6 rounded-full border border-stone-800 flex items-center justify-center transition-transform group-hover:scale-105">
+                        <span class="font-serif italic text-xs font-semibold text-stone-900">C</span>
+                    </div>
+                    <span class="font-serif text-2xl font-normal tracking-tight text-stone-900">Carmen</span>
+                </a>
+
+                <!-- Right Links (Desktop) -->
+                <div class="hidden md:flex items-center space-x-7">
+                    <button id="search-btn"
+                        class="text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors cursor-pointer">
+                        Buscar
+                    </button>
+                    <button id="open-fav-btn"
+                        class="open-fav-btn text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors fav-text-count cursor-pointer">
+                        Favoritos
+                    </button>
+                    <button id="open-cart-btn"
+                        class="open-cart-btn text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-primary transition-colors bolsa-text-count cursor-pointer">
+                        Bolsa (0)
+                    </button>
+                </div>
+
+                <!-- Mobile Controls -->
+                <div class="flex md:hidden items-center space-x-3">
+                    <button class="open-cart-btn w-9 h-9 flex items-center justify-center text-stone-800 relative" title="Bolsa">
+                        <span class="material-icons text-xl">shopping_bag</span>
+                        <span class="cart-badge hidden absolute -top-1 -right-1 bg-primary text-white text-xs font-bold w-4 h-4 rounded-full items-center justify-center">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="w-9 h-9 flex items-center justify-center text-stone-800" title="Menú">
+                        <span class="material-icons text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu"
         class="fixed inset-0 bg-white z-[60] transform translate-x-full transition-transform duration-300 flex flex-col">
         <div class="p-6 flex justify-between items-center border-b border-gray-100">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                <span class="text-xl font-bold tracking-tight text-black">Carmen</span>
+            <a href="index.html" class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-full border border-stone-300 flex items-center justify-center">
+                    <span class="font-serif italic text-[11px] font-semibold text-stone-800">C</span>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="font-serif text-lg tracking-[0.2em] uppercase text-stone-900">Carmen</span>
+                    <span class="text-[11px] tracking-[0.2em] uppercase text-stone-500 mt-0.5">Atelier</span>
+                </div>
             </a>
             <button id="close-mobile-menu" class="w-10 h-10 flex items-center justify-center text-gray-800 hover:text-primary transition-colors">
                 <span class="material-icons text-2xl">close</span>
             </button>
         </div>
-        <nav class="flex-1 flex flex-col items-center justify-center space-y-8 p-8">
+        <nav class="flex-1 flex flex-col items-center justify-center space-y-6 p-8">
             <a href="index.html#collection"
                 class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Bolsos</a>
             <a href="index.html#collection"
@@ -274,16 +127,21 @@
                 class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Billeteras</a>
             <a href="index.html#about"
                 class="mobile-link text-3xl font-light text-gray-900 hover:text-primary transition-colors">Nosotros</a>
+            <button onclick="document.getElementById('close-mobile-menu').click(); window.CarmenFavorites.toggleFavoritesDrawer(true);"
+                class="text-xl text-stone-700 hover:text-primary transition-colors flex items-center gap-2 mt-2">
+                <span class="material-icons text-red-500">favorite</span>
+                Mis Favoritos (<span class="fav-badge inline">0</span>)
+            </button>
             <a href="shipping-returns.html"
-                class="mobile-link text-xl text-gray-500 hover:text-primary transition-colors mt-4">Envíos y Devoluciones</a>
+                class="mobile-link text-lg text-stone-600 hover:text-primary transition-colors">Envíos y Devoluciones</a>
         </nav>
         <div class="p-8 border-t border-gray-100 text-center">
             <p class="text-sm text-gray-500 mb-4">Síguenos</p>
             <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
+                <a href="#" class="text-stone-600 hover:text-primary transition-colors" aria-label="Facebook">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+                <a href="#" class="text-stone-600 hover:text-primary transition-colors" aria-label="Instagram">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
             </div>
@@ -335,25 +193,96 @@
 
                 <!-- Main Image -->
                 <div class="flex-1 rounded-2xl overflow-hidden bg-gray-100 aspect-[4/5] zoom-container reveal-on-scroll shadow-sm">
-                    <img id="main-product-image" src="" alt="Producto" class="w-full h-full object-cover">
+                    <img id="main-product-image" 
+                        src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=870&q=80" 
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=870&q=80';"
+                        alt="Pieza de marroquinería Carmen" class="w-full h-full object-cover">
                 </div>
             </div>
 
             <!-- Right Column: Product Info -->
             <div class="flex flex-col reveal-on-scroll">
-                <span id="product-category-tag" class="text-primary font-bold text-xs uppercase tracking-widest mb-2"></span>
-                <h1 id="product-title" class="text-3xl md:text-4xl font-bold text-text-dark mb-3"></h1>
-                <p id="product-price" class="text-3xl font-bold text-primary mb-6"></p>
+                <h1 id="product-title" class="text-3xl md:text-5xl font-serif font-normal tracking-tight text-text-dark mb-3"></h1>
+                <p id="product-price" class="text-2xl md:text-3xl font-bold text-primary mb-5 font-sans"></p>
 
-                <p id="product-description" class="text-text-medium leading-relaxed mb-8 font-light text-base md:text-lg">
+                <p id="product-description" class="text-text-medium leading-relaxed mb-6 font-light text-base md:text-lg">
                 </p>
+
+                <!-- Color Variant Selector -->
+                <div id="color-selector-section" class="mb-6 pt-5 pb-5 border-t border-b border-gray-200/70">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs uppercase tracking-wider font-bold text-gray-800">Tono de Cuero:</span>
+                        <span id="selected-color-name" class="text-xs font-semibold text-primary font-sans">Cargando...</span>
+                    </div>
+                    <div id="color-swatches" class="flex items-center gap-3">
+                        <!-- Swatches inyectados dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Monogramming / Personalization Section -->
+                <div id="monogram-section" class="mb-6 p-4 md:p-5 bg-stone-50 rounded-2xl border border-stone-200 shadow-xs">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex items-center gap-2.5">
+                            <span class="material-icons text-primary text-xl">auto_awesome</span>
+                            <div>
+                                <h2 class="text-sm font-bold text-gray-900 leading-tight">Grabado Artesanal de Iniciales</h2>
+                                <p class="text-xs text-stone-600 mt-0.5">Personalización única grabada a mano en taller (Sin cargo)</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+                            <input type="checkbox" id="monogram-toggle" class="sr-only peer">
+                            <div class="w-11 h-6 bg-stone-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+
+                    <!-- Monogram Controls (Activables con el switch) -->
+                    <div id="monogram-controls" class="hidden mt-4 pt-4 border-t border-stone-200 space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-1.5">
+                                <label for="monogram-initials" class="text-xs font-bold uppercase tracking-wider text-gray-800">
+                                    Tus Iniciales:
+                                </label>
+                                <span class="text-xs text-stone-500 font-medium">Hasta 3 caracteres</span>
+                            </div>
+                            <input type="text" id="monogram-initials" maxlength="3" placeholder="L.N." 
+                                autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false"
+                                class="w-full uppercase tracking-[0.25em] text-center font-serif text-xl font-bold py-2.5 px-3 border border-stone-300 rounded-xl bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all">
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-bold uppercase tracking-wider text-gray-800 mb-2">Acabado del Grabado:</span>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="monogram-finish-btn active-finish py-2 px-2 text-xs font-bold rounded-xl border-2 border-primary bg-white text-primary transition-all flex flex-col items-center gap-1 shadow-xs" data-finish="Foil Dorado">
+                                    <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-amber-500 via-amber-300 to-yellow-100 shadow-xs"></span>
+                                    <span>Foil Dorado</span>
+                                </button>
+                                <button type="button" class="monogram-finish-btn py-2 px-2 text-xs font-semibold rounded-xl border border-stone-300 bg-white/70 text-stone-700 hover:bg-white transition-all flex flex-col items-center gap-1" data-finish="Foil Plateado">
+                                    <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-slate-400 via-slate-200 to-white shadow-xs"></span>
+                                    <span>Foil Plateado</span>
+                                </button>
+                                <button type="button" class="monogram-finish-btn py-2 px-2 text-xs font-semibold rounded-xl border border-stone-300 bg-white/70 text-stone-700 hover:bg-white transition-all flex flex-col items-center gap-1" data-finish="Bajo Relieve">
+                                    <span class="w-3.5 h-3.5 rounded-full bg-stone-700 shadow-inner"></span>
+                                    <span>Bajo Relieve</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Live Leather Tag Preview (Realistic letterpress, no fake glow) -->
+                        <div class="p-3 bg-stone-900 text-stone-100 rounded-xl flex items-center justify-between border border-stone-800 shadow-inner">
+                            <span class="text-xs uppercase tracking-wider text-stone-300 font-medium">Previsualización:</span>
+                            <div id="monogram-preview-tag" class="px-5 py-1.5 rounded-md bg-[#25201b] border border-stone-700 font-serif tracking-[0.35em] uppercase text-sm font-bold text-amber-200 shadow-inner">
+                                L . N
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Accordions -->
                 <div class="border-b border-gray-200 mb-4">
                     <details class="group py-4 cursor-pointer" open>
-                        <summary class="flex justify-between items-center font-bold text-text-dark">
+                        <summary class="flex justify-between items-center font-bold text-text-dark font-sans text-sm">
                             Especificaciones y Materiales
-                            <span class="material-icons text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                            <span class="material-icons text-stone-500 transition-transform duration-300 chevron">expand_more</span>
                         </summary>
                         <div class="mt-4 text-sm text-text-medium leading-relaxed">
                             <ul id="product-specs" class="list-disc pl-5 space-y-1.5 text-gray-600">
@@ -364,9 +293,9 @@
 
                 <div class="border-b border-gray-200 mb-8">
                     <details class="group py-4 cursor-pointer">
-                        <summary class="flex justify-between items-center font-bold text-text-dark">
+                        <summary class="flex justify-between items-center font-bold text-text-dark font-sans text-sm">
                             Cuidado del Cuero
-                            <span class="material-icons text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                            <span class="material-icons text-stone-500 transition-transform duration-300 chevron">expand_more</span>
                         </summary>
                         <div class="mt-4 text-sm text-gray-600 leading-relaxed space-y-2">
                             <p>Para preservar la pátina natural y la suavidad del cuero:</p>
@@ -412,8 +341,7 @@
         <!-- Related Products Section -->
         <section class="mt-28 border-t border-gray-200/60 pt-20">
             <div class="text-center mb-12">
-                <span class="text-xs uppercase tracking-widest text-primary font-bold">Descubre Más</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mt-1">Otras Piezas Exclusivas</h2>
+                <h2 class="text-2xl md:text-4xl font-serif font-normal text-gray-900 tracking-tight mt-1">Otras Piezas Exclusivas</h2>
             </div>
 
             <!-- Embla Carousel -->
@@ -434,18 +362,51 @@
                 <span class="material-icons text-primary">shopping_bag</span>
                 <h2 class="text-xl font-bold text-gray-900">Tu Bolsa</h2>
             </div>
-            <button id="close-cart" class="text-gray-400 hover:text-gray-900 transition-colors">
+            <button id="close-cart" class="text-stone-600 hover:text-stone-900 transition-colors" title="Cerrar bolsa">
                 <span class="material-icons text-2xl">close</span>
             </button>
         </div>
+
+        <!-- Free Shipping Progress Bar -->
+        <div id="free-shipping-bar-container" class="px-6 py-3.5 bg-stone-50 border-b border-stone-200/70">
+            <div class="flex items-center justify-between text-xs font-medium mb-1.5" id="free-shipping-text">
+                <span class="flex items-center gap-1.5 text-stone-700 font-medium">
+                    <span class="material-icons text-sm text-primary">local_shipping</span>
+                    <span>Envío estándar sin cargo desde $150</span>
+                </span>
+            </div>
+            <div class="w-full h-1.5 bg-stone-200 rounded-full overflow-hidden">
+                <div id="free-shipping-progress" class="h-full bg-primary rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+
         <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
             <!-- Items del carrito -->
         </div>
-        <div class="p-6 border-t border-gray-100 bg-gray-50/70">
-            <div class="flex justify-between items-center mb-5">
-                <span class="text-gray-600 font-medium text-sm">Subtotal Estimado</span>
+
+        <div class="p-6 border-t border-gray-100 bg-stone-50/70">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-stone-700 font-medium text-sm">Subtotal Estimado</span>
                 <span id="cart-total" class="text-xl font-bold text-gray-900">$0.00</span>
             </div>
+
+            <!-- Express Checkout Fields -->
+            <div class="mb-4 pt-3.5 border-t border-stone-200/70">
+                <p class="text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">Datos para el despacho (opcional)</p>
+                <div class="space-y-2">
+                    <div class="relative">
+                        <span class="material-icons text-stone-600 absolute left-2.5 top-2.5 text-base">person_outline</span>
+                        <input type="text" id="checkout-customer-name" placeholder="Tu nombre y apellido" autocomplete="name"
+                            class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-stone-200 bg-white text-gray-900 placeholder-stone-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                    </div>
+                    <div class="relative">
+                        <span class="material-icons text-stone-600 absolute left-2.5 top-2.5 text-base">location_on</span>
+                        <input type="text" id="checkout-customer-city" placeholder="Ciudad o dirección de entrega" autocomplete="address-level2"
+                            class="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-stone-200 bg-white text-gray-900 placeholder-stone-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                    </div>
+                </div>
+            </div>
+
             <button id="checkout-btn"
                 class="w-full btn-premium btn-premium-primary flex items-center justify-center gap-2">
                 <span class="material-icons text-sm">whatsapp</span>
@@ -457,59 +418,92 @@
     <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300">
     </div>
 
+    <!-- Favorites Sidebar -->
+    <div id="fav-sidebar"
+        class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-icons text-red-500">favorite</span>
+                <h2 class="text-xl font-bold text-gray-900">Tus Favoritos</h2>
+            </div>
+            <button id="close-fav" class="text-stone-600 hover:text-stone-900 transition-colors" title="Cerrar favoritos">
+                <span class="material-icons text-2xl">close</span>
+            </button>
+        </div>
+        <div id="fav-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Items inyectados por favorites.js -->
+        </div>
+    </div>
+    <!-- Favorites Overlay -->
+    <div id="fav-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300">
+    </div>
+
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-5 py-3 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-stone-900 text-white text-xs font-semibold px-5 py-3 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 z-[100]">
         Mensaje
     </div>
 
     <!-- Footer -->
-    <footer class="py-16 border-t border-gray-200/60 mt-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="col-span-1">
-                <a href="index.html" class="flex items-center gap-2 mb-4">
-                    <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                    <span class="text-lg font-bold text-black">Carmen</span>
-                </a>
-                <p class="text-sm text-gray-500 leading-relaxed">
-                    Artesanía de lujo y diseño atemporal en cuero premium.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Colección</h4>
-                <ul class="space-y-2 text-sm text-gray-500">
-                    <li><a href="index.html#collection" class="hover:text-primary transition-colors">Bolsos</a></li>
-                    <li><a href="index.html#collection" class="hover:text-primary transition-colors">Carteras</a></li>
-                    <li><a href="index.html#collection" class="hover:text-primary transition-colors">Billeteras</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Información</h4>
-                <ul class="space-y-2 text-sm text-gray-500">
-                    <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Envíos y Entregas</a></li>
-                    <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Cambios y Devoluciones</a></li>
-                    <li><a href="index.html#about" class="hover:text-primary transition-colors">Sobre Nosotros</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-gray-900 mb-4 uppercase tracking-widest">Síguenos</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
+    <footer class="bg-[#EFE9DF] border-t border-stone-200/80 py-16 md:py-20 px-4 md:px-8 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12">
+                <!-- Brand Info -->
+                <div class="md:col-span-4">
+                    <span class="font-serif text-2xl font-normal text-stone-900 mb-3 block">Carmen</span>
+                    <p class="text-xs text-stone-600 leading-relaxed max-w-xs font-light">
+                        Atelier de cuero y marroquinería de lujo.<br>Buenos Aires.
+                    </p>
+                </div>
+
+                <!-- Comprar -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xs font-bold text-stone-900 uppercase tracking-widest mb-4">Comprar</h3>
+                    <ul class="space-y-2 text-xs text-stone-600">
+                        <li><a href="index.html#collection" data-filter="Bolsos" class="hover:text-primary transition-colors">Bolsos</a></li>
+                        <li><a href="index.html#collection" data-filter="Carteras" class="hover:text-primary transition-colors">Carteras</a></li>
+                        <li><a href="index.html#collection" data-filter="Billeteras" class="hover:text-primary transition-colors">Billeteras</a></li>
+                    </ul>
+                </div>
+
+                <!-- Atención -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xs font-bold text-stone-900 uppercase tracking-widest mb-4">Atención</h3>
+                    <ul class="space-y-2 text-xs text-stone-600">
+                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Envíos y devoluciones</a></li>
+                        <li><a href="shipping-returns.html" class="hover:text-primary transition-colors">Cuidado del cuero</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="md:col-span-4">
+                    <h3 class="text-xs font-bold text-stone-900 uppercase tracking-widest mb-4">Newsletter</h3>
+                    <p class="text-xs text-stone-700 mb-4 font-medium">
+                        Novedades del taller, una vez al mes.
+                    </p>
+                    <form onsubmit="event.preventDefault(); alert('¡Gracias por unirte al atelier!'); this.reset();" class="flex flex-col sm:flex-row gap-2 max-w-sm">
+                        <input type="email" required placeholder="tu@email.com"
+                            class="px-4 py-2.5 rounded-full text-xs bg-white text-stone-900 border border-stone-300 placeholder-stone-600 focus:outline-none focus:border-stone-900 flex-1">
+                        <button type="submit"
+                            class="px-5 py-2.5 rounded-full text-xs font-semibold bg-stone-900 text-white hover:bg-stone-800 transition-colors cursor-pointer">
+                            Suscribirme
+                        </button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="mt-12 pt-8 border-t border-gray-200/60 text-center">
-            <p class="text-xs text-gray-400">&copy; 2024 Carmen. Todos los derechos reservados.</p>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-stone-300/60 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-700 gap-4">
+                <p>&copy; 2026 Carmen Atelier</p>
+                <p class="text-stone-700 font-medium">Hecho a mano en Argentina</p>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts de Datos y Módulos -->
     <script src="products.js"></script>
     <script src="cart.js"></script>
+    <script src="favorites.js"></script>
     <script src="search.js"></script>
 
     <!-- Lógica de Página de Producto -->
@@ -565,6 +559,108 @@
                 specsContainer.innerHTML = currentProduct.specs.map(s => `<li>${s}</li>`).join('');
             }
 
+            // Estado de variante y personalización
+            let selectedColor = (currentProduct.colors && currentProduct.colors[0]) ? currentProduct.colors[0].name : "Original";
+            let selectedColorImage = (currentProduct.colors && currentProduct.colors[0]) ? currentProduct.colors[0].image : currentProduct.image;
+            let selectedFinish = "Foil Dorado";
+
+            // Renderizar Selector de Tonos de Cuero
+            const colorSwatchesContainer = document.getElementById('color-swatches');
+            const colorNameEl = document.getElementById('selected-color-name');
+            if (colorNameEl) colorNameEl.textContent = selectedColor;
+
+            if (colorSwatchesContainer) {
+                colorSwatchesContainer.innerHTML = '';
+                const colors = currentProduct.colors || [{ name: "Original", hex: "#C07D3E", image: currentProduct.image }];
+                
+                colors.forEach((col, idx) => {
+                    const swatchBtn = document.createElement('button');
+                    swatchBtn.type = 'button';
+                    swatchBtn.title = col.name;
+                    const isActive = idx === 0;
+                    swatchBtn.className = `w-9 h-9 rounded-full transition-all flex items-center justify-center p-0.5 ${isActive ? 'ring-2 ring-primary ring-offset-2 scale-105' : 'hover:scale-105 opacity-80 hover:opacity-100 ring-1 ring-gray-200'}`;
+                    swatchBtn.innerHTML = `
+                        <span class="w-full h-full rounded-full shadow-inner border border-black/10" style="background-color: ${col.hex};"></span>
+                    `;
+
+                    swatchBtn.addEventListener('click', () => {
+                        selectedColor = col.name;
+                        selectedColorImage = col.image;
+                        if (colorNameEl) colorNameEl.textContent = col.name;
+
+                        // Actualizar estilo activo
+                        colorSwatchesContainer.querySelectorAll('button').forEach(b => {
+                            b.className = 'w-9 h-9 rounded-full transition-all flex items-center justify-center p-0.5 hover:scale-105 opacity-80 hover:opacity-100 ring-1 ring-gray-200';
+                        });
+                        swatchBtn.className = 'w-9 h-9 rounded-full transition-all flex items-center justify-center p-0.5 ring-2 ring-primary ring-offset-2 scale-105';
+
+                        // Actualizar imagen principal si la variante trae imagen
+                        if (col.image && mainImg) {
+                            mainImg.src = col.image;
+                        }
+                        updateWhatsAppBtn();
+                    });
+
+                    colorSwatchesContainer.appendChild(swatchBtn);
+                });
+            }
+
+            // Lógica de Personalización / Monogramming
+            const monogramToggle = document.getElementById('monogram-toggle');
+            const monogramControls = document.getElementById('monogram-controls');
+            const monogramInitials = document.getElementById('monogram-initials');
+            const monogramPreviewTag = document.getElementById('monogram-preview-tag');
+            const finishBtns = document.querySelectorAll('.monogram-finish-btn');
+
+            function updatePreviewTag() {
+                if (!monogramPreviewTag) return;
+                const raw = monogramInitials ? monogramInitials.value.trim().toUpperCase() : '';
+                const letters = raw.length > 0 ? raw.split('').join(' . ') : 'L . N';
+                monogramPreviewTag.textContent = letters;
+
+                // Estilos según acabado (Elegancia artesanal, sin brillos artificiales de IA)
+                if (selectedFinish === 'Foil Dorado') {
+                    monogramPreviewTag.className = 'px-5 py-1.5 rounded-md bg-[#25201b] border border-amber-900/60 font-serif tracking-[0.35em] uppercase text-sm font-bold text-amber-200 shadow-inner';
+                } else if (selectedFinish === 'Foil Plateado') {
+                    monogramPreviewTag.className = 'px-5 py-1.5 rounded-md bg-[#1f2124] border border-slate-700 font-serif tracking-[0.35em] uppercase text-sm font-bold text-slate-200 shadow-inner';
+                } else { // Bajo Relieve
+                    monogramPreviewTag.className = 'px-5 py-1.5 rounded-md bg-[#181614] border border-stone-800 font-serif tracking-[0.35em] uppercase text-sm font-bold text-stone-400 shadow-inner';
+                }
+            }
+
+            if (monogramToggle) {
+                monogramToggle.addEventListener('change', () => {
+                    if (monogramToggle.checked) {
+                        monogramControls.classList.remove('hidden');
+                        setTimeout(() => monogramInitials && monogramInitials.focus(), 50);
+                    } else {
+                        monogramControls.classList.add('hidden');
+                    }
+                    updateWhatsAppBtn();
+                });
+            }
+
+            if (monogramInitials) {
+                monogramInitials.addEventListener('input', (e) => {
+                    // Solo letras
+                    e.target.value = e.target.value.replace(/[^a-zA-Z]/g, '').toUpperCase();
+                    updatePreviewTag();
+                    updateWhatsAppBtn();
+                });
+            }
+
+            finishBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    selectedFinish = btn.getAttribute('data-finish');
+                    finishBtns.forEach(b => {
+                        b.className = 'monogram-finish-btn py-2 px-2 text-xs font-semibold rounded-xl border border-stone-300 bg-white/70 text-stone-700 hover:bg-white transition-all flex flex-col items-center gap-1';
+                    });
+                    btn.className = 'monogram-finish-btn active-finish py-2 px-2 text-xs font-bold rounded-xl border-2 border-primary bg-white text-primary transition-all flex flex-col items-center gap-1 shadow-xs';
+                    updatePreviewTag();
+                    updateWhatsAppBtn();
+                });
+            });
+
             // Galería de miniaturas dinámicas
             const thumbsContainer = document.getElementById('product-thumbnails');
             if (thumbsContainer) {
@@ -589,25 +685,45 @@
                 });
             }
 
-            // Botón Agregar al Carrito
+            // Botón Agregar al Carrito con Opciones
             const addToCartBtn = document.getElementById('add-to-cart-btn');
             if (addToCartBtn) {
                 addToCartBtn.onclick = () => {
                     if (window.CarmenCart) {
-                        window.CarmenCart.addToCart(currentProduct, 1);
+                        const hasMonogram = monogramToggle && monogramToggle.checked && monogramInitials && monogramInitials.value.trim().length > 0;
+                        const monogramData = hasMonogram ? {
+                            initials: monogramInitials.value.trim().toUpperCase(),
+                            finish: selectedFinish
+                        } : null;
+
+                        window.CarmenCart.addToCart(currentProduct, 1, {
+                            color: selectedColor,
+                            monogram: monogramData,
+                            image: selectedColorImage
+                        });
                     }
                 };
             }
 
-            // Botón WhatsApp Dinámico
-            const waBtn = document.getElementById('whatsapp-consult-btn');
-            if (waBtn) {
+            // Botón WhatsApp Dinámico sincronizado con opciones
+            function updateWhatsAppBtn() {
+                const waBtn = document.getElementById('whatsapp-consult-btn');
+                if (!waBtn) return;
                 const phone = BRAND_CONFIG.whatsappNumber;
-                const msg = `¡Hola Carmen! Quisiera consultar sobre la disponibilidad y detalles de la pieza: ${currentProduct.name} (${currentProduct.price}).`;
+                let msg = `¡Hola Carmen! Quisiera consultar sobre la pieza: *${currentProduct.name}* (${currentProduct.price})`;
+                if (selectedColor) {
+                    msg += `, en tono de cuero *${selectedColor}*`;
+                }
+                if (monogramToggle && monogramToggle.checked && monogramInitials && monogramInitials.value.trim()) {
+                    msg += `, con grabado artesanal de iniciales "*${monogramInitials.value.trim().toUpperCase()}*" (${selectedFinish})`;
+                }
+                msg += `. ¿Tienen disponibilidad para coordinar el envío? Muchas gracias.`;
+
                 waBtn.href = phone 
                     ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
                     : `https://wa.me/?text=${encodeURIComponent(msg)}`;
             }
+            updateWhatsAppBtn();
 
             // Productos Relacionados Dinámicos (excluye el actual)
             renderRelatedProducts(currentProduct.id);
@@ -629,10 +745,10 @@
                 slide.onclick = () => window.location.href = `product.html?id=${item.id}`;
                 slide.innerHTML = `
                     <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-3 bg-gray-200">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md text-gray-800">${item.category}</span>
+                        <img src="${item.image}" alt="${item.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=870&q=80';" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <span class="absolute top-2 left-2 bg-stone-900 text-white text-xs font-semibold tracking-wide px-2.5 py-1 rounded-md shadow-sm">${item.category}</span>
                     </div>
-                    <h3 class="text-base font-bold text-gray-900 group-hover:text-primary transition-colors leading-snug">${item.name}</h3>
+                    <h3 class="text-base font-serif font-bold text-gray-900 group-hover:text-primary transition-colors leading-snug">${item.name}</h3>
                     <p class="text-primary font-bold text-sm mt-0.5">${item.price}</p>
                 `;
                 container.appendChild(slide);
@@ -669,39 +785,21 @@
             // Favoritos
             const favBtn = document.getElementById('favorite-product-btn');
             const favIcon = document.getElementById('fav-icon');
-            const favKey = 'carmen_favorites';
-            let favs = [];
-            try {
-                favs = JSON.parse(localStorage.getItem(favKey)) || [];
-            } catch (e) {
-                favs = [];
-            }
-
-            const isFav = favs.includes(currentProduct.id);
-            if (favIcon && isFav) {
-                favIcon.textContent = 'favorite';
-                favIcon.classList.add('text-red-500');
+            if (favIcon && window.CarmenFavorites) {
+                if (window.CarmenFavorites.isFavorite(currentProduct.id)) {
+                    favIcon.textContent = 'favorite';
+                    favIcon.classList.add('text-red-500');
+                } else {
+                    favIcon.textContent = 'favorite_border';
+                    favIcon.classList.remove('text-red-500');
+                }
             }
 
             if (favBtn) {
                 favBtn.onclick = () => {
-                    const index = favs.indexOf(currentProduct.id);
-                    if (index > -1) {
-                        favs.splice(index, 1);
-                        if (favIcon) {
-                            favIcon.textContent = 'favorite_border';
-                            favIcon.classList.remove('text-red-500');
-                        }
-                        showToast('Eliminado de favoritos');
-                    } else {
-                        favs.push(currentProduct.id);
-                        if (favIcon) {
-                            favIcon.textContent = 'favorite';
-                            favIcon.classList.add('text-red-500');
-                        }
-                        showToast('Guardado en favoritos');
+                    if (window.CarmenFavorites) {
+                        window.CarmenFavorites.toggleFavorite(currentProduct.id);
                     }
-                    localStorage.setItem(favKey, JSON.stringify(favs));
                 };
             }
         }

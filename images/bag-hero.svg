@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" class="w-full h-auto drop-shadow-sm">
+  <defs>
+    <radialGradient id="shadow-E9D5BD" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#111111" stop-opacity="0.25"/>
+      <stop offset="65%" stop-color="#111111" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#111111" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bodyGrad-E9D5BD" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E9D5BD"/>
+      <stop offset="100%" stop-color="#CEB193"/>
+    </linearGradient>
+    <linearGradient id="handleGrad-E9D5BD" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CEB193"/>
+      <stop offset="50%" stop-color="#E9D5BD"/>
+      <stop offset="100%" stop-color="#CEB193"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sombra de contacto suave -->
+  <ellipse cx="250" cy="405" rx="170" ry="22" fill="url(#shadow-E9D5BD)" />
+
+  <!-- Asa trasera (profundidad) -->
+  <path d="M 180 200 C 180 80, 320 80, 320 200" fill="none" stroke="#CEB193" stroke-width="16" stroke-linecap="round" opacity="0.65" />
+
+  <!-- Cuerpo de la Cartera (Silueta trapezoidal con bordes redondeados) -->
+  <path d="M 148 185 
+           L 352 185 
+           C 362 185, 369 191, 372 199 
+           L 412 360 
+           C 416 376, 404 390, 388 390 
+           L 112 390 
+           C 96 390, 84 376, 88 360 
+           L 128 199 
+           C 131 191, 138 185, 148 185 Z" 
+        fill="url(#bodyGrad-E9D5BD)" />
+
+  <!-- Asa delantera -->
+  <path d="M 195 190 C 195 85, 305 85, 305 190" fill="none" stroke="url(#handleGrad-E9D5BD)" stroke-width="16" stroke-linecap="round" />
+  <!-- Remaches / Soportes de asa -->
+  <rect x="187" y="182" width="16" height="18" rx="3" fill="#CEB193" />
+  <rect x="297" y="182" width="16" height="18" rx="3" fill="#CEB193" />
+
+  <!-- Línea de costura superior punteada artesanal -->
+  <line x1="155" y1="208" x2="345" y2="208" stroke="#FAF9F7" stroke-width="2.5" stroke-dasharray="4,5" opacity="0.8" />
+
+  <!-- Broche central de bronce / cerradura giratoria -->
+  <rect x="237" y="225" width="26" height="28" rx="4" fill="#A8845A" />
+  <rect x="246" y="232" width="8" height="14" rx="2" fill="#1c1917" opacity="0.45" />
+</svg>
